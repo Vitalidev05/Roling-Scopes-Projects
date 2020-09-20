@@ -372,3 +372,22 @@ body {
     flex-direction: column;
     overflow: hidden;
 }
+
+/*implement*/
+
+.implement {
+    padding: 120px 0 140px;
+}
+
+.implement__block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 110px;
+}
+
+.implement__section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
