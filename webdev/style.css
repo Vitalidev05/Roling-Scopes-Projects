@@ -203,3 +203,55 @@ body {
 .header__li a:hover::after {
     opacity: 1;
 }
+
+/*your-life*/
+.your-life {
+    background: url('assets/img/bg-image.jpg') no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+    width: 100%;
+    height: 100vh;
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+}
+
+.your-life__title {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 64px;
+    line-height: 75px;
+    color:#fff;
+    letter-spacing: 4.5px;
+
+    max-width: 804px ; 
+    margin: 0 auto;  
+}
+
+.your-life__text {
+    font-size: 18px;
+    color: #fff;
+    line-height: 140%;
+
+    text-align: center;
+    max-width: 504px ;
+    margin: 20px auto 30px;
+
+}
+
+.your-life__button {    
+    margin: 0 auto;
+}
+
+.your-life__block {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+
+    width: 100%;
+    flex-grow: 1;
+    padding-top: 48px;
+
+
+}
