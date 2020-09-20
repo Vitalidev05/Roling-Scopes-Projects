@@ -267,3 +267,24 @@ body {
     padding-bottom: 109px;
     margin: 0 auto auto ;
 }
+
+/*rappresent*/
+.rappresent__block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.rappresent {
+    padding: 120px 0 140px;
+}
+
+.rappresent__section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.rappresent__button {
+    margin-right: auto;
+}
