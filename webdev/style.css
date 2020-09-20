@@ -391,3 +391,64 @@ body {
     flex-direction: row;
     justify-content: space-between;
 }
+
+/*subscribe*/
+.subscribe {
+    background: url('assets/img/pexels-christina-morillo-11816751.jpg') no-repeat;
+    background-size: cover;
+    background-position: 50% 0%;
+    width: 100%;
+    padding: 200px 0 220px;
+}
+
+.subscribe__form {
+    display: flex;
+    flex-direction: column;
+    max-width: 406px;
+    margin: 0 auto;
+}
+
+.subscribe__label {
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 28px;
+    letter-spacing: 1px;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.subscribe__button {
+    margin: 30px auto 0;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+
+}
+
+.subscribe__text {
+    padding: 14px 0 12px 24px;
+    flex-grow: 1;
+}
+
+.subscribe__text::-webkit-input-placeholder {
+    font-size: 14px;
+    line-height: 140%;
+    color: #373737;
+}
+
+.subscribe__submit {
+    flex-grow: 0 ;
+    width: 66px;
+    height: 46px;
+    border-radius: 0px;
+
+    background: #00AFDB url("assets/img/icons/fa-check.svg") no-repeat;
+    background-position: 50% 50%;
+    transition: 0.2s background-color linear;
+}
+
+.subscribe__submit:hover {
+    background-color: #009CC2;
+    cursor: pointer;
+}
