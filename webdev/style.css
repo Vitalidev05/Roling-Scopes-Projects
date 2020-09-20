@@ -255,3 +255,15 @@ body {
 
 
 }
+
+/*social*/
+
+.social-block {
+    display: flex;
+    justify-content: space-between;
+    width: 170px;
+    height: 20px;
+    flex-grow: 0;
+    padding-bottom: 109px;
+    margin: 0 auto auto ;
+}
