@@ -452,3 +452,73 @@ body {
     background-color: #009CC2;
     cursor: pointer;
 }
+
+/*download*/
+.download {
+    border-color: #F5F6F7;
+    padding: 120px 0 180px;
+    background-color: #F5F6F7;
+}
+
+.download-container {
+    width: 100%;
+    max-width: 500px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+.download__label {
+    background-color: #00AFDB;
+    padding: 15px 0 15px 16px;
+
+    line-height: 16px;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+
+    cursor:pointer;
+    flex-grow: 1;
+    transition: 0.3s background-color ease-in-out;
+}
+
+.download__button {
+    width: 60px;
+    height: 46px;
+    cursor:pointer;
+}
+
+.download__form {
+    display: flex;
+    width: 186px;
+}
+
+.download__form:first-child  {
+    margin-right: 30px;
+}
+
+.download__form:hover .download__label {
+    background-color: #009CC2;
+}
+
+.play-market {
+    background: #009CC2 url('assets/img/icons/icon-android.svg') no-repeat 50% 50%;
+}
+
+.appstore {
+    background: #009CC2 url('assets/img/icons/icon-apple.svg') no-repeat 50% 50%;
+}
+
+.download__block {
+    display: flex;
+    justify-content: center;
+}
+
+.download__suptitle {
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 28px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: center;
+    color:#373737;
+}
