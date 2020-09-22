@@ -1,5 +1,6 @@
-# kantyshvitali-JS2020Q3
-Private repository for @kantyshvitali
+# ready-projects
 
-## deployed tasks
-[webdev](https://rolling-scopes-school.github.io/kantyshvitali-JS2020Q3/webdev/)
+## Task 1. Calculator
+- [описание задания](https://github.com/rolling-scopes-school/tasks/blob/master/tasks/ready-projects/calculator.md)
+- [видео](https://youtu.be/VHGaBc9OcXU)
+- [демо](https://irinainina.github.io/ready-projects/calculator-ru/)
