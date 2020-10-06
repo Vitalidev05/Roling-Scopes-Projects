@@ -353,3 +353,41 @@ body {
 	margin: 0 auto;
 }
 
+/*help*/
+.help {
+	background-color: #fff;
+	padding: 80px 0 100px;
+}
+
+.help__suptitle {
+	max-width: 310px;
+	text-align: center;
+	margin: 0 auto 60px;
+}
+
+.help__text {
+	margin-top: 30px;
+}
+
+.help__card {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+}
+.help__card:not(:first-child) {
+	margin-left: 120px;
+}
+.help__card:first-child {
+	margin-bottom: 55px;
+}
+.help__card:nth-child(6) {
+	margin-left: 86px;
+}
+
+.help__list {
+	display: flex;
+	max-width: 1030px;
+	margin: 0 auto;
+	flex-wrap: wrap;
+}
+
