@@ -81,3 +81,10 @@ body {
 	font-weight: 400;
 }
 
+.container {
+	width: 100%;
+	max-width: 1230px;
+	padding: 0 15px;
+	margin: 0 auto;
+}
+
