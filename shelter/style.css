@@ -104,3 +104,48 @@ body {
 	border-color: #FDDCC4;
 }
 
+.gold {
+	color: #F1CDB3;
+}
+
+/*Typography*/
+.h5 {
+	font-family: Georgia, sans-serif;
+	line-height: 17px;
+	font-size: 15px;
+	color: #545454;
+	letter-spacing: 0.06em;
+}
+
+.h4 {
+	font-family: Georgia, sans-serif;
+	letter-spacing: 0.06em;
+	line-height: 23px;
+	font-size: 20px;
+}
+
+.h3 {
+	font-size: 35px;
+	line-height: 45px;
+	letter-spacing: 0.06em;
+	color: #545454;
+	font-family: Georgia, serif;
+}
+
+.h2 {
+	font-family: Georgia, sans-serif;
+	color: #fff;
+	font-size: 44px;
+	line-height: 57px;
+}
+
+.paragraph-l {
+	color: #CDCDCD;
+}
+
+.paragraph-s {
+	color: #B2B2B2;
+	font-size: 12px;
+	line-height: 18px;
+}
+
