@@ -300,3 +300,56 @@ body {
 	margin: 25px 0 25px;
 }
 
+/*pets*/
+.pets {
+	padding: 80px 0 100px;
+	background-color: #F6F6F6;
+}
+
+.pets__button {
+	max-width: 262px;
+	background-color: #F1CDB3;
+	margin: 0 auto;
+}
+
+.pets__slider {
+	margin: 60px 0;
+	display: flex;
+	justify-content: center;
+}
+
+.pets__card {
+	display: flex;
+	flex-direction: column;
+	background-color: #fff;
+	text-align: center;
+}
+.pets__card:nth-of-type(2) {
+	margin: 0 90px;
+}
+
+.pets__element {
+	padding: 0 41.5px 30px;
+}
+
+.shop-button {
+	padding: 13px 43px 13px;
+	border: 2px solid #F1CDB3;
+	max-width: 188px;
+	transition: 0.2s border-color linear, 0.2s background-color linear;
+}
+
+.product-name {
+	font-family: Georgia, sans-serif;
+	font-size: 20px;
+	letter-spacing: 0.06em;
+	line-height: 23px;
+	margin: 30px 0;
+}
+
+.pets__suptitle {
+	max-width: 400px;
+	text-align: center;
+	margin: 0 auto;
+}
+
