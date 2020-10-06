@@ -72,3 +72,12 @@ h1, h2, h3, h4, h5, h6 {
 	font-weight: inherit;
 }
 
+/*body*/
+body {
+	font-family: Arial, serif;
+	font-size: 15px;
+	line-height: 24px;
+	color: #4C4C4C;
+	font-weight: 400;
+}
+
