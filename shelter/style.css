@@ -436,3 +436,56 @@ body {
 	margin: auto 30px auto 0;
 }
 
+/*footer*/
+.footer {
+	background: url("assets/img/footer/Footer.png") no-repeat, url("assets/img/footer/footer-background.png") no-repeat;
+	background-size: cover;
+	padding-top: 40px;
+}
+
+.footer__block {
+	display: flex;
+	flex-direction: row;
+}
+
+.footer__questions {
+	display: flex;
+	flex-direction: column;
+	max-width: 280px;
+	margin-top: 16px;
+}
+
+.footer__visit {
+	display: flex;
+	flex-direction: column;
+	max-width: 302px;
+	margin: 16px 160px 0;
+}
+
+.question-suptitle {
+	color: #fff;
+}
+
+.visit-suptitle {
+	color: #fff;
+}
+
+.footer__email {
+	display: flex;
+	margin: 40px 0;
+}
+
+.footer__icon {
+	margin-right: 20px;
+}
+
+.footer__location {
+	display: flex;
+}
+.footer__location:first-of-type {
+	margin: 34px 0 32px;
+}
+
+.footer__text {
+	margin: auto;
+}
