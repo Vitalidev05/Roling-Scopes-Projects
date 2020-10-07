@@ -23,6 +23,12 @@ for (let i = 0; i < operationButtons.length; i++) {
   });
 }
 
+for (let i = 0; i < clearButtons.length; i++) {
+  let clearBtn = clearButtons[i];
+  clearBtn.addEventListener('click', function (e) {
+    clear(e.target.textContent);
+  });
+}
 
 
 
