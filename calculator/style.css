@@ -1,6 +1,7 @@
 body {
   font-size: 20px;
   background: linear-gradient(to right, #00AAFF, #00FF6C);
+
 }
 
 .main {
@@ -9,11 +10,51 @@ body {
   padding-top: 40px;
 }
 
+.instruction {
+  display: flex;
+}
+
+.instruction__container {
+  display: flex;
+  flex-direction: column;
+  max-width: 320px;
+  margin: auto 0;
+  padding: 20px;
+  background-color: #fff;
+} 
+
+.instruction__suptitle {
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  text-align: center;
+}
+
+.instruction__text {
+  font-size: 18px;
+}
+
+.instruction__attention {
+  font-size: 18px;
+  margin: 0;
+}
+
+.instruction__subtitle {
+  font-size: 18px;
+  margin: 0 0 15px 0;
+}
+
+.instruction__attention {
+  font-style: italic;
+  color: #666666;
+}
+
 .calc {
   background-color: #1c93ee;
   width: 385px;
   padding: 30px;
   border-radius: 6px;
+  margin-right: 60px;
 }
 
 .calc-display-input {
