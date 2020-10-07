@@ -109,3 +109,16 @@ function operationPress(op) {
   }
 }
 
+function decimal(argument) {
+  let localDecimalMemory = display.value;
+
+  if (MemoryNewNumber) {
+    localDecimalMemory = '0.';
+    MemoryNewNumber = false;
+  } else {
+    if (localDecimalMemory.indexOf('.') === -1) {
+      localDecimalMemory += '.';
+    }
+  }
+  display.value = localDecimalMemory;
+}
