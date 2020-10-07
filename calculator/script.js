@@ -68,3 +68,44 @@ function operationPress(op) {
     display.value = '-';
     MemoryNewNumber = true;
   }
+  
+  //Binary operators
+  else {
+    let strNum1 = MemoryCurrentNumber + '',
+    strNum2 = localOperationMemory + '',
+    dpNum1 = !!(MemoryCurrentNumber % 1) ? (strNum1.length - strNum1.indexOf('.') - 1) : 0,
+    dpNum2 = !!(localOperationMemory % 1) ? (strNum2.length - strNum2.indexOf('.') - 1) : 0,
+    multiplier = Math.pow(10, dpNum1 > dpNum2 ? dpNum1 : dpNum2),
+    tempNum1 = Math.round(MemoryCurrentNumber * multiplier),
+    tempNum2 = Math.round(localOperationMemory * multiplier);
+    
+    MemoryNewNumber = true;
+    switch (MemoryPendingOperation) {
+      case '+':
+        MemoryCurrentNumber = (tempNum1 + tempNum2) / multiplier;
+        MinusMode = false;
+        break;
+      case '-':
+        MemoryCurrentNumber = (tempNum1 - tempNum2) / multiplier;
+        MinusMode = false;
+        break;
+      case '*':
+        MemoryCurrentNumber = (tempNum1 * tempNum2) / (multiplier * multiplier);
+        MinusMode = false;
+        break;
+      case '/':
+        MemoryCurrentNumber = tempNum1 / tempNum2;
+        MinusMode = false;
+        break;
+      case '^':
+        MemoryCurrentNumber = Math.pow(MemoryCurrentNumber, localOperationMemory);
+        MinusMode = false;
+        break;
+      default:
+        MemoryCurrentNumber = +localOperationMemory;
+    }
+    display.value = MemoryCurrentNumber;
+    MemoryPendingOperation = op;
+  }
+}
+
