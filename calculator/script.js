@@ -16,12 +16,14 @@ for (let i = 0; i < numberButtons.length; i++) {
    });
 }
 
+for (let i = 0; i < operationButtons.length; i++) {
+  let operationBtn = operationButtons[i];
+  operationBtn.addEventListener('click', function (e) {
+    operationPress(e.target.textContent);
+  });
+}
 
 
 
 
-allClearButton.addEventListener('click', button => {
-	calculator.clear();
-	calculator.updateDisplay();
-});
 
