@@ -30,6 +30,7 @@ for (let i = 0; i < clearButtons.length; i++) {
   });
 }
 
+decimalButton.addEventListener('click', decimal);
 
 
 
