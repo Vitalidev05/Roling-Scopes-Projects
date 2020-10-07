@@ -1,0 +1,50 @@
+@import 'nullstyle.scss';
+
+/*body*/
+body {
+	font-family: Arial, serif;
+	font-size: 15px;
+	line-height: 24px;
+	color: #4C4C4C;
+	font-weight: 400;
+}
+
+.container {
+	width: 100%;
+	max-width: 1230px;
+	padding: 0 15px;
+	margin: 0 auto;
+}
+
+
+.section-button {
+	display: block;
+	color: #292929;
+	font-family: Georgia, sans-serif;
+
+	line-height: 22px;
+	font-size: 17px;
+	letter-spacing: 0.06em;
+	padding: 15px 45px;
+	border-radius: 25px;
+
+	transition: 0.2s background-color linear;
+	&:hover {
+		background-color: #FDDCC4;
+		border-color: #FDDCC4;
+	}
+
+}
+
+.gold {
+	color: #F1CDB3;
+}
+
+@import 'typography.scss';
+@import 'header.scss';
+@import 'start-screen.scss';
+@import 'about.scss';
+@import 'pets.scss';
+@import 'help.scss';
+@import 'donation.scss';
+@import 'footer.scss';

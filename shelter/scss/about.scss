@@ -1,0 +1,32 @@
+.about {
+	padding:80px 0 100px;
+	background-color: #fff;
+}
+
+.about__block {
+	display: flex;
+	flex-direction: row;
+}
+
+.about__image {
+	background: url("assets/img/about/about-pets.png") no-repeat;
+	flex-grow: 1;
+	margin: 0 120px 0 175px;
+}
+
+.about__content {
+	max-width: 548.5px;
+	margin: 14px 175px 14px 0;
+}
+
+.about__suptitle {
+	max-width: 370px;
+}
+
+.about__text {
+	max-width: 430px;
+	&:first-of-type {
+		margin: 25px 0 25px;
+	}
+	
+}

@@ -1,0 +1,45 @@
+/*donation*/
+.donation {
+	padding: 81px 0 101px;
+	background-color: #F6F6F6;
+}
+
+.donation__block {
+	display: flex;
+	justify-content: center;
+}
+
+.donation__suptitle {
+	max-width: 300px;
+}
+
+.donation__text {
+	margin: 20px 0;
+}
+
+.donation__credit {
+	display: flex;
+	padding: 10px 15px;
+	background-color: #F1CDB3;
+	border-radius: 10px;
+	max-width: 350px;
+	margin-bottom: 20px;
+}
+
+.donation__credit-number {
+	font-family: Georgia, sans-serif;
+	line-height: 23px;
+	font-size: 20px;
+	color: #545454;
+	letter-spacing: 0.06em;
+	margin-left: 15px;
+}
+
+.donation__description {
+	max-width: 380px;
+}
+
+.donation__image {
+	margin: auto 30px auto 0;
+
+}
