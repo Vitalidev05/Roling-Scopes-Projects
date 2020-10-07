@@ -32,5 +32,17 @@ for (let i = 0; i < clearButtons.length; i++) {
 
 decimalButton.addEventListener('click', decimal);
 
+function numberPress(number) {
+  if (MemoryNewNumber) {
+    display.value = display.value === '-' ? `-${number}` : number;
+    MemoryNewNumber = false;
+  } else {
+    if (display.value === '0') {
+      display.value = number;
+    } else {
+      display.value += number;
+    }
+  }
+}
 
 
