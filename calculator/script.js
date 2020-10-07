@@ -122,3 +122,16 @@ function decimal(argument) {
   }
   display.value = localDecimalMemory;
 }
+
+function clear(id) {
+  if (id === 'ce') {
+    display.value = '0';
+    MemoryNewNumber = true;
+  } else if (id === 'c') {
+    display.value = '0';
+    MemoryNewNumber = false;
+    MemoryCurrentNumber = 0;
+    MemoryPendingOperation = '';
+    MinusMode = false;
+  }
+}
