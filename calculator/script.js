@@ -45,4 +45,26 @@ function numberPress(number) {
   }
 }
 
+function operationPress(op) {
+  let localOperationMemory = display.value;
 
+  if (op === '-' && (MemoryPendingOperation !== '') && !MinusMode && MemoryNewNumber) {
+    MinusMode = true;
+    MemoryNewNumber = true;
+    return;
+  }
+
+  if (MinusMode) {
+    localOperationMemory *= -1;
+    MinusMode = false;
+  }
+  //Unary operators
+  if (op === '√') {
+    if (localOperationMemory >= 0) {
+      MemoryCurrentNumber = Math.sqrt(localOperationMemory);
+      display.value = MemoryCurrentNumber;
+    } else display.value = 'ERROR';
+  } else if (op === '-' && localOperationMemory === '0') {
+    display.value = '-';
+    MemoryNewNumber = true;
+  }
