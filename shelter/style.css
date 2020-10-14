@@ -762,11 +762,22 @@ body {
 	background: url("assets/img/footer/Footer.png") no-repeat, url("assets/img/footer/footer-background.png") no-repeat;
 	background-size: cover;
 	padding-top: 40px;
+	overflow: hidden;
+}
+@media (max-width: 1024px) {
+	.footer {
+		padding-top: 30px;
+	}
 }
 
 .footer__block {
 	display: flex;
 	flex-direction: row;
+}
+@media (max-width: 1024px) {
+	.footer__block {
+		flex-wrap: wrap;
+	}
 }
 
 .footer__questions {
@@ -775,12 +786,38 @@ body {
 	max-width: 280px;
 	margin-top: 16px;
 }
+@media (max-width: 768px) {
+	.footer__questions {
+		margin: 0 22px 0 0;
+		padding-bottom: 40px;
+	}
+}
+@media (max-width: 575px) {
+	.footer__questions {
+		text-align: center;
+		margin: 0;
+	}
+}
 
 .footer__visit {
 	display: flex;
 	flex-direction: column;
 	max-width: 302px;
-	margin: 16px 160px 0;
+	margin: 16px 0 0;
+	padding-bottom: 50px;
+}
+@media (max-width: 768px) {
+	.footer__visit {
+		margin: 0 20px;
+		padding-bottom: 65px;
+	}
+}
+@media (max-width: 575px) {
+	.footer__visit {
+		text-align: center;
+		margin: 0;
+		padding-bottom: 92px;
+	}
 }
 
 .question-suptitle {
@@ -789,6 +826,10 @@ body {
 
 .visit-suptitle {
 	color: #fff;
+}
+
+.footer__phone {
+	display: flex;
 }
 
 .footer__email {
@@ -808,5 +849,66 @@ body {
 }
 
 .footer__text {
-	margin: auto;
+	margin: auto 0;
+}
+
+.footer__content {
+	display: flex;
+	justify-content: space-between;
+	max-width: 740px;
+	width: 100%;
+}
+@media (max-width: 1024px) {
+	.footer__content {
+		margin: 0 auto;
+	}
+}
+@media (max-width: 768px) {
+	.footer__content {
+		flex-wrap: wrap;
+		justify-content: space-around;
+	}
+}
+
+.footer__img {
+	margin-left: auto;
+}
+@media (max-width: 1024px) {
+	.footer__img {
+		margin: 0 auto;
+	}
+}
+@media (max-width: 575px) {
+	.footer__img {
+		max-width: 260px;
+	}
+}
+
+/*header*/
+.pets-header {
+	padding: 30px 0;
+	background-color: #fff;
+}
+
+.pets-big {
+	width: 100%;
+	padding: 80px 0 100px;
+	background-color: #f6f6f6;
+}
+
+.pets-big__suptitle {
+	text-align: center;
+	max-width: 400px;
+	margin: 0 auto;
+	margin-bottom: 45px;
+}
+
+.pets-big__slider {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.slider-item-1 {
+	margin: 15px 20px;
 }
