@@ -533,6 +533,7 @@ body {
 .pets {
 	padding: 80px 0 100px;
 	background-color: #F6F6F6;
+	overflow: hidden;
 }
 
 .pets__button {
@@ -542,29 +543,29 @@ body {
 }
 
 .pets__slider {
-	margin: 60px 0;
+	margin: 60px auto;
 	display: flex;
-	justify-content: center;
+	justify-content: space-between;
+	max-width: 990px;
 }
 
 .pets__card {
 	display: flex;
 	flex-direction: column;
-	background-color: #fff;
+	background-color: inherit;
 	text-align: center;
-}
-.pets__card:nth-of-type(2) {
-	margin: 0 90px;
+	width: 270px;
 }
 
 .pets__element {
-	padding: 0 41.5px 30px;
+	padding: 0 41px 30px;
+	border-radius: 0 0 9px 9px;
+	background-color: #fff;
 }
 
 .shop-button {
 	padding: 13px 43px 13px;
 	border: 2px solid #F1CDB3;
-	max-width: 188px;
 	transition: 0.2s border-color linear, 0.2s background-color linear;
 }
 
@@ -580,6 +581,11 @@ body {
 	max-width: 400px;
 	text-align: center;
 	margin: 0 auto;
+}
+
+.pets__image {
+	background-color: #FAFAFA;
+	border-radius: 9px 9px 0 0;
 }
 
 /*help*/
