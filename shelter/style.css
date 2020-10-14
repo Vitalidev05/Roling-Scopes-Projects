@@ -181,6 +181,8 @@ body {
 		line-height: 32px;
 		text-align: center;
 		letter-spacing: 0.06em;
+	}
+}
 
 .paragraph-l {
 	color: #CDCDCD;
@@ -190,6 +192,26 @@ body {
 	color: #B2B2B2;
 	font-size: 12px;
 	line-height: 18px;
+}
+
+.color-dark-l {
+	color: #545454;
+}
+
+.color-dark-3xl {
+	color: #292929;
+}
+
+.gold {
+	color: #F1CDB3;
+}
+
+.white {
+	color: #fff;
+}
+
+.color-dark-s {
+	color: #CDCDCD;
 }
 
 /*header*/
