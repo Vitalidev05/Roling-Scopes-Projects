@@ -4,10 +4,13 @@
 	width: 100%;
 	margin-top: 60px;
 	height: 60px;
+	@media (max-width:768px) {
+		margin-top: 30px;	
+	}
+	overflow: hidden;
 }
 
 .header__link {
-	color: #CDCDCD;
 	line-height: 24px;
 	padding-bottom: 5px;
 	transition: 0.25s linear color;
@@ -31,13 +34,69 @@
 
 }
 
+.header__link2 {
+	line-height: 24px;
+	padding-bottom: 5px;
+	transition: 0.25s linear color;
+
+	&.active {
+		color: #292929;
+		&:after {
+			content: "";
+			display: block;
+			position: absolute;
+			width: 100%;
+			height: 3px;
+			background-color: #F1CDB3;
+			transition: 0.25s linear opacity;
+		}
+	}
+
+	&:hover {
+		color: #292929;
+	}
+
+}
+
 .header__link:fisrt-child {
 	color: #fff;
 }
 
 .header__ul {
 	display: flex;
+	@media(max-width: 720px) {
+		visibility: hidden;
+		position: absolute;
+		left: 0;
+	}
+}
 
+.nav-toggle {
+	display: none;
+	width: 30px;
+	height: 22px;
+	margin: auto 43px auto 0;
+	background-color: inherit;
+	border-top: 2px solid #F1CDB3;
+	border-bottom: 2px solid #F1CDB3;
+	@media(max-width: 720px) {
+		display: block;
+	}
+	&:after {
+		content: '';
+		display: block;
+		height: 2px;
+		width: 100%;
+		background-color: #F1CDB3;
+		margin-top: 0px;
+	}
+}
+
+.nav-black {
+	border-color: #000;
+	&:after {
+		background-color: #000;
+	}
 }
 
 .header__li {
@@ -45,6 +104,7 @@
 	flex-direction: column;
 	justify-content: center;
 	position: relative;
+	padding-bottom: 5px;
 	&:not(:last-child) {
 		margin-right: 35px;
 	}
@@ -54,7 +114,6 @@
 
 .logo {
 	font-family: Georgia, sans-serif;
-	color: #F1CDB3;
 	font-size: 32px;
 	font-weight: 400;
 	line-height: 35px;
@@ -63,7 +122,7 @@
 
 .logo-suptitle {
 	margin-top: 6px;
-	color: #fff;
+	
 	font-size: 13px;
 	letter-spacing: 0.1em;
 	text-align: center;
@@ -74,6 +133,7 @@
 	width: 100%;
 	display: flex;
 	justify-content: space-between;
+	
 }
 
 .header__nav {
@@ -82,10 +142,3 @@
 
 }
 
-.start-screen__dog {
-	flex-grow: 1;
-	margin-top: 180px;
-	background: url("assets/img/start-screen/start-screen-puppy.png") no-repeat 50% 0%;
-	background-size: 100%;
-	min-width: 500px;
-}
