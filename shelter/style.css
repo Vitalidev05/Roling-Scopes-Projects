@@ -88,6 +88,17 @@ body {
 	padding: 0 40px;
 	margin: 0 auto;
 }
+@media (max-width: 768px) {
+	.container {
+		padding: 0 30px;
+	}
+}
+@media (max-width: 575px) {
+	.container {
+		padding: 0 10px;
+	}
+}
+
 
 .section-button {
 	display: block;
