@@ -74,7 +74,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /*body*/
 body {
-	font-family: Arial, serif;
+	font-family: Arial, sans-serif;
 	font-size: 15px;
 	line-height: 24px;
 	color: #4C4C4C;
@@ -83,8 +83,9 @@ body {
 
 .container {
 	width: 100%;
-	max-width: 1230px;
-	padding: 0 15px;
+	height: 100%;
+	max-width: 1280px;
+	padding: 0 40px;
 	margin: 0 auto;
 }
 
@@ -102,10 +103,6 @@ body {
 .section-button:hover {
 	background-color: #FDDCC4;
 	border-color: #FDDCC4;
-}
-
-.gold {
-	color: #F1CDB3;
 }
 
 /*Typography*/
@@ -129,7 +126,23 @@ body {
 	line-height: 45px;
 	letter-spacing: 0.06em;
 	color: #545454;
-	font-family: Georgia, serif;
+	font-family: Georgia, sans-serif;
+}
+@media (max-width: 575px) {
+	.h3 {
+		font-size: 25px;
+		line-height: 32px;
+		text-align: center;
+	}
+}
+
+.h3-footer {
+	color: #fff;
+	font-size: 35px;
+	line-height: 45px;
+	letter-spacing: 0.06em;
+	color: #545454;
+	font-family: Georgia, sans-serif;
 }
 
 .h2 {
@@ -138,6 +151,12 @@ body {
 	font-size: 44px;
 	line-height: 57px;
 }
+@media (max-width: 575px) {
+	.h2 {
+		font-size: 25px;
+		line-height: 32px;
+		text-align: center;
+		letter-spacing: 0.06em;
 
 .paragraph-l {
 	color: #CDCDCD;
