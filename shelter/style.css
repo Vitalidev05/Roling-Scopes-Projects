@@ -99,6 +99,19 @@ body {
 	}
 }
 
+.container-pets {
+	padding: 0 20px;
+}
+@media (max-width: 768px) {
+	.container-pets {
+		padding: 0 10px;
+	}
+}
+@media (max-width: 575px) {
+	.container-pets {
+		padding: 0 5px;
+	}
+}
 
 .section-button {
 	display: block;
