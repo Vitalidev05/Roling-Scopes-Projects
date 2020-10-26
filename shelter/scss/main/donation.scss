@@ -70,7 +70,9 @@
 	}
 	@media (max-width:575px) {		
 		margin: 42px 20px 0;
-		max-height: 135px;
+		min-height: 135px;
+		height: 40vw;
+		background-position: 50% 100%;
 	}
 }
 
