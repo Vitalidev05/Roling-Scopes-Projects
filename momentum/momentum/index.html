@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css" >
+  <link href="css/owfont-regular.min.css" rel="stylesheet" type="text/css">
+  <title>momentum</title>
+</head>
+<body>
+ <section class="section">
+   
+    <div class="time-container">
+      <time class="time"></time>  
+      <time class="time-weeks"></time>
+      
+    </div>
+
+    <div class="name-content">
+      <h1 class="name-container">
+        <span class="greeting"></span>
+        <span class="name" contenteditable="true"> </span>
+      </h1>
+      <h2>What Is Your Focus For Today?</h2>
+      <h2 class="focus" contenteditable="true"></h2>
+    </div>
+
+    <button class="reload"><i class="fas fa-sync-alt reload-icon"></i></button>
+
+    <div class="reload-content">
+      <button class="reload-quote"><i class="fas fa-sync-alt reload-icon"></i></button>
+      <figure class="quote">
+        <blockquote>
+          You were not born a winner, and you were not born a loser. You are what you make yourself be.
+        </blockquote>      
+      </figure>
+    </div>
+
+    <div class="app__weather app__container weather" id="weather">
+      <input class="weather__city" id="city" type="text" value="London"></input>
+      <div class="weather__wrapper">
+        <div class="weather__icon owf"></div>
+       <div class="wether__block">
+          <p class="weather__temperature"></p>
+          <p class="weather__description"></p>
+          <p class="weather__wind"></p>
+          <p class="weather__humidity"></p>
+       </div>
+      </div>
+    </div>
+ </section> 
+ <script src="js/main.js"></script>
+ <script src="js/background.js"></script>
+ <script src="js/quote.js"></script>
+ <script src="js/weather.js"></script>
+</body>
+</html>
