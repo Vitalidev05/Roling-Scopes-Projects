@@ -435,6 +435,16 @@ class Keyboard {
 		}
 	}
 
+	create_textarea() {
+		const displayBlock = document.createElement('div');
+
+		displayBlock.className = 'display__block';
+		this.textArea.className = 'display';
+		this.textArea.placeholder = "Click there";
+		displayBlock.append(this.textArea);
+		document.body.append(displayBlock);	
+	}
+
 }
 
 let keyboard = new Keyboard('ru');
