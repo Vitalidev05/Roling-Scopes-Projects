@@ -445,6 +445,110 @@ class Keyboard {
 		document.body.append(displayBlock);	
 	}
 
+	_init(lang) {
+		const keyboardSection = document.createElement('section');	
+		keyboardSection.className = 'keyboard';
+
+		rowsOrder.forEach(row => {
+			const keyboardRow = document.createElement('div');
+			keyboardRow.className = 'keyboard__row';
+
+			row.forEach(key => {
+				const KeyboardKey = document.createElement('button');
+				KeyboardKey.className = 'keyboard__key';
+				let small;
+				let shift;
+				language[lang].forEach(object => {
+					if(key === object.code) {
+						small = object.small;
+						shift = object.shift;
+					}
+				});
+				KeyboardKey.innerHTML = small;
+				KeyboardKey.classList.add('special');
+				switch(key) {
+					case 'Tab': 
+						KeyboardKey.classList.add('tab');
+						break;
+					case 'CapsLock': 
+						KeyboardKey.classList.add('caps-lock');
+						break;
+					case 'ShiftLeft': 
+						KeyboardKey.classList.add('shift-left');
+						break;
+					case 'ShiftRight': 
+						KeyboardKey.classList.add('shift-right');
+						break;
+					case 'Enter': 
+						KeyboardKey.classList.add('enter');
+						break;
+					case 'Backspace': 
+						KeyboardKey.classList.add('backspace');
+						break;
+					case 'Delete': 
+						KeyboardKey.innerHTML = '<i class="fas fa-microphone"></i>';
+						KeyboardKey.classList.add('delete');
+						break;
+					case 'ControlLeft': 
+						KeyboardKey.classList.add('control-left');
+						break;
+					case 'ControlRight': 
+						KeyboardKey.classList.add('control-right');
+						break;
+					case 'Win': 
+						KeyboardKey.classList.add('win');
+						KeyboardKey.innerHTML = '<i class="fab fa-windows"></i>';
+						break;
+					case 'AltLeft': 
+						KeyboardKey.innerHTML = lang;
+						KeyboardKey.classList.add('alt-left');
+						break;
+					case 'Space': 
+						KeyboardKey.classList.add('space');
+						break;
+					case 'AltRight': 
+						KeyboardKey.classList.add('alt-right');
+						
+						KeyboardKey.innerHTML = '<i class="fas fa-volume-mute"></i>';
+						break;
+					case 'ArrowRight': 
+						KeyboardKey.classList.remove('special');
+						KeyboardKey.classList.add('arrow');
+						KeyboardKey.classList.add('arrow-right');
+						break;
+					case 'ArrowDown': 
+						KeyboardKey.classList.remove('special');
+						KeyboardKey.classList.add('arrow');
+						KeyboardKey.classList.add('arrow-down');
+						break;
+					case 'ArrowLeft': 
+						KeyboardKey.classList.remove('special');
+						KeyboardKey.classList.add('arrow');
+						KeyboardKey.classList.add('arrow-left');
+						break;
+					case 'ArrowUp': 
+						KeyboardKey.classList.remove('special');
+						KeyboardKey.classList.add('arrow');
+						KeyboardKey.classList.add('arrow-up');
+						break;
+					default:
+						KeyboardKey.classList.remove('special');
+						KeyboardKey.classList.add('word');
+
+						break;
+				}
+				keyboardRow.append(KeyboardKey);
+				this.keyboardKeys.push({small: small, shift: shift, code: key });
+				this.keyboardButtons.push(KeyboardKey);
+			});
+
+			keyboardSection.append(keyboardRow);
+		});
+
+		document.body.append(keyboardSection);
+		this.keyboard = keyboardSection;
+	}
+
 }
 
 let keyboard = new Keyboard('ru');
