@@ -231,6 +231,13 @@ class Keyboard {
 
 	}
 
+	keyboard_slide() {
+		this.keyboard.classList.add('active');
+		this.textArea.addEventListener('click', () => {
+			this.keyboard.classList.add('active');
+		});
+	}
+
 }
 
 let keyboard = new Keyboard('ru');
