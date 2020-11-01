@@ -306,6 +306,10 @@ class Keyboard {
 		}
 	}
 
+	changeText(text) {
+		return (this.capsMode) ? text.toUpperCase() : text;
+	}
+
 }
 
 let keyboard = new Keyboard('ru');
