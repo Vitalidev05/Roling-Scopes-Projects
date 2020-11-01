@@ -32,6 +32,21 @@ class Keyboard {
 		this.sound();
 		this.setRecognizer();
 	}
+
+	setRecognizer() {
+		console.log(this.micro);
+		window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+		const language = this.lang === 'en' ? 'en-US' : 'ru-RU';
+		let recognizer = new SpeechRecognition();
+		recognizer.lang = language;
+		recognizer.continuous = true;
+  
+		recognizer.addEventListener('result', (e) => {
+		  console.log(e);
+		});
+  
+		// recognizer.addEventListener('end', this.properties.recognizer.stop);
+	 }
 }
 
 let keyboard = new Keyboard('ru');
