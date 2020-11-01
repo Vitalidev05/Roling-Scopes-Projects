@@ -310,6 +310,131 @@ class Keyboard {
 		return (this.capsMode) ? text.toUpperCase() : text;
 	}
 
+	touch_input() {
+		let buttons = this.keyboardButtons;
+		let keys = this.keyboardKeys;
+		let text = this.textArea;
+		
+		buttons.forEach(button => {
+			button.addEventListener('mousedown', () => {
+				if(button.innerHTML === '<i class="fas fa-volume-mute"></i>') {
+					button.classList.toggle('animate-button');
+				}
+				if(button.innerHTML === '<i class="fas fa-microphone"></i>') {
+					button.classList.toggle('animate-button');
+				}
+				if(button.innerHTML === 'CapsLock') {
+					button.classList.toggle('animate-button');
+				}
+				if(button.innerHTML === 'Shift') {
+					button.classList.toggle('animate-button');
+				}
+				if(button.innerHTML !== 'Shift' && button.innerHTML !== 'CapsLock'
+					&&  button.innerHTML !== '<i class="fas fa-volume-mute"></i>'
+					&& button.innerHTML !== '<i class="fas fa-microphone"></i>') {
+					button.classList.add('animate-button');
+				}
+			});
+			button.addEventListener('mouseup', () => {
+				if(button.innerHTML !== 'CapsLock' && button.innerHTML !== 'Shift'
+					&& button.innerHTML !== '<i class="fas fa-volume-mute"></i>'
+					&& button.innerHTML !== '<i class="fas fa-microphone"></i>') {
+					button.classList.remove('animate-button');
+				}
+			});
+
+			button.addEventListener('mouseout', () => {
+				if(button.innerHTML !== 'CapsLock' && button.innerHTML !== 'Shift'
+					&& button.innerHTML !== '<i class="fas fa-volume-mute"></i>'
+					&& button.innerHTML !== '<i class="fas fa-microphone"></i>') {
+					button.classList.remove('animate-button');
+				}
+			})
+		});
+
+		for(let i = 0; i < buttons.length; i++) {			
+			buttons[i].addEventListener('click', () => {
+				switch(keys[i].code) {
+					case 'Tab':
+						break;
+					case 'Win':
+						this.keyboard.classList.remove('active');
+						break;
+					case 'CapsLock': 
+						if(this.capsMode)
+							this.capsMode = false;
+						else
+							this.capsMode = true;
+						this.switch_keys();
+						break;
+						
+					case 'ShiftLeft': 
+						if(this.shiftMode)
+							this.shiftMode = false;
+						else
+							this.shiftMode = true;
+						this.switch_keys();
+						break;
+					case 'ShiftRight':
+						if(this.shiftMode)
+							this.shiftMode = false;
+						else
+							this.shiftMode = true; 
+						this.switch_keys();
+						break;
+					case 'Enter':
+						text.value += '\n'; 
+						break;
+					case 'Backspace':
+						let arr = text.value.split('').reverse();
+						arr.splice(Math.abs(this.selectPosition), 1);
+						text.value = arr.reverse().join('');
+						break;
+					case 'Delete': 
+						if(this.micro)
+							this.micro = false;
+						else
+							this.micro = true;
+						this.setRecognizer();
+						break;
+					case 'ControlLeft': 
+						break;
+					case 'ControlRight': 
+						break;
+					case 'AltLeft': 
+						this.changeLang();
+						break;
+					case 'AltRight': 
+						if(this.mute)
+							this.mute = false;
+						else
+							this.mute = true;
+						
+						break;
+					case 'ArrowRight': 
+						this.selectPosition += 1;
+						if(this.selectPosition > 0) 
+							this.selectPosition = 0;
+						break;
+					case 'ArrowDown': 
+						this.selectPosition -= 1;
+						break;
+					case 'ArrowLeft': 
+						this.selectPosition -= 1;
+						break;
+					case 'ArrowUp': 
+						this.selectPosition += 1;
+						if(this.selectPosition > 0) 
+							this.selectPosition = 0;
+						break;
+					default:
+						text.value += buttons[i].innerHTML ;
+						break;
+				}
+			});
+		}
+	}
+
 }
 
 let keyboard = new Keyboard('ru');
