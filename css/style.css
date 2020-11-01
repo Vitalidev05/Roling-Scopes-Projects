@@ -243,3 +243,57 @@ body {
 }
 
 
+@media(max-width: 768px) {  
+  .keyboard {
+    gap: 7px;
+    padding: 5px 7px 7px 5px;
+  }
+  .keyboard__row {
+    gap: 7px;
+  }
+  .caps-lock {
+    padding-left: 5px;
+  }
+  
+  .tab {
+    padding-left: 5px;
+  }
+  
+  .shift-left {
+    padding-left: 5px;
+  }
+  
+  .shift-right {
+    padding-right: 5px;
+  }
+  
+  .enter {
+    padding-right: 5px;
+  }
+  
+  .backspace {
+    padding-right: 5px;
+  }
+  
+  .delete {
+    
+    padding-right: 5px;
+  }
+  
+  .control-left {
+    padding-left: 5px;
+  }
+  
+  .control-right {
+    padding-right: 5px;
+  }
+}
+
+@media(max-width: 600px) {  
+  .keyboard {
+    gap: 3px;
+  }
+  .keyboard__row {
+    gap: 3px;
+  }
+}
