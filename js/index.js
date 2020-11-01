@@ -182,6 +182,55 @@ class Keyboard {
 		}		
 	}
 	
+	switch_keys() {
+		if(this.capsMode || this.shiftMode) {
+			if(this.capsMode) {
+				this.keyboardButtons.forEach(button => {
+					if(button.classList.contains('word')) {
+						button.innerHTML = button.innerHTML.toUpperCase();
+					}
+				});
+			} 
+			if(this.shiftMode) {
+				for(let i = 0; i < this.keyboardButtons.length; i++) {
+					let button = this.keyboardButtons[i];
+					let key = this.keyboardKeys[i];
+					if(button.classList.contains('word')) {
+						button.innerHTML = key.shift;
+					}
+				}
+			}
+			if(this.capsMode && this.shiftMode) {
+				this.keyboardButtons.forEach(button => {
+					if(button.classList.contains('word')) {
+						button.innerHTML = button.innerHTML.toLowerCase();
+					}
+				});
+			}
+			if(this.capsMode && this.shiftMode === false) {
+				for(let i = 0; i < this.keyboardButtons.length; i++) {
+					let button = this.keyboardButtons[i];
+					let key = this.keyboardKeys[i];
+					if(button.classList.contains('word')) {
+						button.innerHTML = key.small.toUpperCase();
+					}
+				}
+			}
+
+		}else {
+			for(let i = 0; i < this.keyboardButtons.length; i++) {
+				let button = this.keyboardButtons[i];
+				let key = this.keyboardKeys[i];
+				if(button.classList.contains('word')) {
+					button.innerHTML = key.small;
+				}
+			}
+		}	
+
+		
+
+	}
+
 }
 
 let keyboard = new Keyboard('ru');
