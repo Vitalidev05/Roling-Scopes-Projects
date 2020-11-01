@@ -299,6 +299,13 @@ class Keyboard {
 		});
 	}
 
+	focus() {
+		this.textArea.focus();
+		this.textArea.onblur = () => {
+			this.textArea.focus();
+		}
+	}
+
 }
 
 let keyboard = new Keyboard('ru');
