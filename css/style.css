@@ -118,3 +118,20 @@ body {
 }
 
 
+.keyboard__key { 
+  font-size: 14px;
+  position: relative;
+  display: inline-block;
+	width: 45px;
+	height: 45px;
+  background: url('../assets/img/gradient1.jpg') no-repeat 50%;
+  background-size: cover;
+	color: inherit;
+	border-radius: 0.25em;
+	box-shadow: 2px 2px 2px black;
+	transition: .1s transform ease-in-out,
+          .1s box-shadow ease-in-out,
+          .1s background-image ease-in-out;
+
+	text-shadow: inherit;
+}
