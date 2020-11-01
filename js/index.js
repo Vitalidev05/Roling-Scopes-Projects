@@ -238,6 +238,67 @@ class Keyboard {
 		});
 	}
 
+	keyboard_input() {
+		this.textArea.addEventListener('keydown', (e) => {	
+			
+			for(let i = 0; i < this.keyboardButtons.length; i++) {	
+				if(this.keyboardKeys[i].code === e.code) {	
+							
+					if(e.code === 'CapsLock') {
+									
+						if(this.capsMode)
+							this.capsMode = false;
+						else
+							this.capsMode = true;
+						this.switch_keys();
+						this.keyboardButtons[i].classList.toggle('animate-button');
+					}
+					if(e.code === 'ShiftLeft' || e.code === 'ShiftRight') {
+						if(this.shiftMode)
+							this.shiftMode = false;
+						else
+							this.shiftMode = true;
+						this.switch_keys();
+						this.keyboardButtons[i].classList.toggle('animate-button');
+					}
+					if(e.code !== 'CapsLock' && e.code !== 'ShiftLeft' && e.code !== 'ShiftRight') {
+						this.keyboardButtons[i].classList.add('animate-button');
+					}
+					switch (e.code) {
+						case 'ArrowRight': 
+							this.selectPosition += 1;
+							if(this.selectPosition > 0) 
+								this.selectPosition = 0;
+							break;
+						case 'ArrowDown': 
+							this.selectPosition -= 1;
+							break;
+						case 'ArrowLeft': 
+							this.selectPosition -= 1;
+							break;
+						case 'ArrowUp': 
+							this.selectPosition += 1;
+							if(this.selectPosition > 0) 
+								this.selectPosition = 0;
+							break;
+					
+						default:
+							break;
+					}
+				}
+			}	
+		});
+		this.textArea.addEventListener('keyup', (e) => {
+			for(let i = 0; i < this.keyboardButtons.length; i++) {	
+				if(this.keyboardKeys[i].code === e.code) {
+					if(e.code !== 'CapsLock' && e.code !== 'ShiftLeft' && e.code !== 'ShiftRight') {
+						this.keyboardButtons[i].classList.remove('animate-button');
+					}
+				}
+			}	
+		});
+	}
+
 }
 
 let keyboard = new Keyboard('ru');
