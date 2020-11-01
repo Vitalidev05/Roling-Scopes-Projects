@@ -137,6 +137,13 @@ class Keyboard {
 		});
 	}
 
+	selection() {
+		document.body.onclick = () => {
+			this.textArea.selectionStart = this.textArea.selectionEnd
+			 = this.selectPosition + this.textArea.value.length;	
+		};
+	}
+
 }
 
 let keyboard = new Keyboard('ru');
