@@ -47,6 +47,96 @@ class Keyboard {
   
 		// recognizer.addEventListener('end', this.properties.recognizer.stop);
 	 }
+
+	sound() {
+		this.textArea.addEventListener('keydown', (e) => {	
+			if(this.mute) {
+				
+			} else 
+			if(e.key === 'Shift') {
+				const audio = document.createElement('audio');
+				audio.src = '../assets/sound/shift.mp3';
+				audio.currentTime = 0;
+				audio.play();
+			} else
+			if(e.key === 'Enter') {
+				const audio = document.createElement('audio');
+				audio.src = '../assets/sound/enter.mp3';
+				audio.currentTime = 0;
+				audio.play();
+			} else
+			if(e.key=== 'Backspace') {
+				const audio = document.createElement('audio');
+				audio.src = '../assets/sound/backspace.mp3';
+				audio.currentTime = 0;
+				audio.play();
+			} else
+			if(e.key === 'CapsLock') {
+				const audio = document.createElement('audio');
+				audio.src = '../assets/sound/capsLock.mp3';
+				audio.currentTime = 0;
+				audio.play();
+			} else
+			if(this.lang === 'en') {
+				const audio = document.createElement('audio');
+				audio.src = '../assets/sound/english.mp3';
+				audio.currentTime = 0;
+				audio.play();
+			}
+			else{
+				const audio = document.createElement('audio');
+				audio.src = '../assets/sound/russian.mp3';
+				audio.currentTime = 0;
+				audio.play();
+			}
+		});
+		this.keyboardButtons.forEach(button => {
+
+			button.addEventListener('click', () => {
+				if(this.mute) {
+				
+				} else 
+				if(button.innerHTML === 'Shift') {
+					const audio = document.createElement('audio');
+					audio.src = '../assets/sound/shift.mp3';
+					audio.currentTime = 0;
+					audio.play();
+				} else
+				if(button.innerHTML === 'Enter') {
+					const audio = document.createElement('audio');
+					audio.src = '../assets/sound/enter.mp3';
+					audio.currentTime = 0;
+					audio.play();
+				} else
+				if(button.innerHTML === 'Backspace') {
+					const audio = document.createElement('audio');
+					audio.src = '../assets/sound/backspace.mp3';
+					audio.currentTime = 0;
+					audio.play();
+				} else
+				if(button.innerHTML === 'CapsLock') {
+					const audio = document.createElement('audio');
+					audio.src = '../assets/sound/capsLock.mp3';
+					audio.currentTime = 0;
+					audio.play();
+				} else				
+				if(this.lang === 'en') {
+					const audio = document.createElement('audio');
+					audio.src = '../assets/sound/english.mp3';
+					audio.currentTime = 0;
+					audio.play();
+				}
+				else{
+					const audio = document.createElement('audio');
+					audio.src = '../assets/sound/russian.mp3';
+					audio.currentTime = 0;
+					audio.play();
+				}
+				
+			});
+		});
+	}
+
 }
 
 let keyboard = new Keyboard('ru');
