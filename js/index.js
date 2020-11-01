@@ -144,6 +144,44 @@ class Keyboard {
 		};
 	}
 
+	changeLang() {
+		if(this.lang === 'ru') {
+			this.lang = 'en'
+		}else {
+			this.lang = 'ru'
+		}
+		// console.log(language[this.lang]);
+		let keyboardKeys = [];
+		this.keyboardKeys.forEach(button => {
+			language[this.lang].forEach(e => {
+				if(button.code === e.code) {
+					keyboardKeys.push(e);
+				}
+			});
+		});
+		this.keyboardKeys = keyboardKeys;
+
+		for(let i = 0; i < this.keyboardKeys.length; i++) {
+			if(this.keyboardButtons[i].innerHTML === '<i class="fas fa-volume-mute"></i>') {
+				
+			} else
+			if(this.keyboardButtons[i].innerHTML === '<i class="fas fa-microphone"></i>') {
+				
+			} else 
+			if(this.keyboardButtons[i].innerHTML === 'ru' || 
+			this.keyboardButtons[i].innerHTML === 'en') {
+				if(this.keyboardButtons[i].innerHTML === 'ru') {
+					this.keyboardButtons[i].innerHTML = 'en';
+				} else
+				this.keyboardButtons[i].innerHTML = 'ru';
+			} else
+			this.keyboardButtons[i].innerHTML = this.keyboardKeys[i].small;
+			if(this.keyboardButtons[i].innerHTML === 'Win') {
+				this.keyboardButtons[i].innerHTML = '<i class="fab fa-windows"></i>';
+			}
+		}		
+	}
+	
 }
 
 let keyboard = new Keyboard('ru');
