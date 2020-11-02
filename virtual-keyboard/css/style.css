@@ -132,7 +132,6 @@ body {
 	transition: .1s transform ease-in-out,
           .1s box-shadow ease-in-out,
           .1s background-image ease-in-out;
-
 	text-shadow: inherit;
 }
 
@@ -141,8 +140,8 @@ body {
 }
 
 .arrow {
-  background-image: url('../assets/img/gradient4.jpg');
-  color: #000;
+  background-image: url('../assets/img/gradient3.jpg');
+  
 }
 
 .caps-lock {
@@ -237,7 +236,7 @@ body {
 }
 
 .animate-button {
-  background-image: url('../assets/img/gradient2.jpg');
+  background: #47525c;
   transform: translate(2px, 2px);
   box-shadow: none;
 }
