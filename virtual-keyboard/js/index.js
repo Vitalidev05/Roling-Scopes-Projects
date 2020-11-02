@@ -30,22 +30,28 @@ class Keyboard {
 		this.switch_keys();
 		this.selection();
 		this.sound();
-		this.setRecognizer();
 	}
 
 	setRecognizer() {
-		console.log(this.micro);
 		window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-		const language = this.lang === 'en' ? 'en-US' : 'ru-RU';
-		let recognizer = new SpeechRecognition();
-		recognizer.lang = language;
-		recognizer.continuous = true;
-  
-		recognizer.addEventListener('result', (e) => {
-		  console.log(e);
+
+		const recognition = new SpeechRecognition();
+		recognition.interimResults = false;
+		recognition.lang = this.lang;
+				
+		recognition.addEventListener('result', e => {
+			const transcript = Array.from(e.results)
+				.map(result => result[0])
+				.map(result => result.transcript)
+				.join('');
+
+				this.textArea.value += transcript + ' ';
 		});
-  
-		// recognizer.addEventListener('end', this.properties.recognizer.stop);
+
+		recognition.addEventListener('end', recognition.start);
+
+		recognition.start();
+		
 	 }
 
 	sound() {
