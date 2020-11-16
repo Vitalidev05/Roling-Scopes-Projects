@@ -23,4 +23,17 @@ export default class gemPuzzle {
 			arr.push(i);
 		}
 	} 
+	//add DOM to page
+	init () {
+		//init variables
+		this.sound = document.createElement('button');
+		this.update = document.createElement("div");
+		const wrapper = document.createElement("div");
+		const nav = document.createElement("nav");
+		const button = document.createElement("button");
+		const listButton = document.createElement('button');
+		const rating = document.createElement('div');
+		const container = document.createElement("div");
+		const gamefield = document.createElement("section");
+	}
  }
