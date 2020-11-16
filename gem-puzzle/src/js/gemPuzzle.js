@@ -252,5 +252,10 @@ export default class gemPuzzle {
 		this.moves.innerHTML = `Moves: ${this.counter}`;
 	}
  
+	//to discharge Counter
+	dischargeCounter () {
+		this.counter = 0;
+		this.moves.innerHTML = `Moves: ${this.counter}`;
 	}
+ 
  }
