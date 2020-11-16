@@ -416,5 +416,14 @@ export default class gemPuzzle {
 			})
 	
 		})
+	
+		//hide rating on click 
+		this.rating = document.querySelector(".rating");
+		list.addEventListener("click", () => {
+			this.rating.classList.toggle("up-up");
+		});
+	
+		this.fillRating();
+	
 	}	
  }
