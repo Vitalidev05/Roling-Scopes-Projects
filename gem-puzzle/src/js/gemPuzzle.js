@@ -245,5 +245,12 @@ export default class gemPuzzle {
 		audio.play();
 	}
  
+ 
+	//to start counter
+	count () {
+		this.counter++;
+		this.moves.innerHTML = `Moves: ${this.counter}`;
+	}
+ 
 	}
  }
