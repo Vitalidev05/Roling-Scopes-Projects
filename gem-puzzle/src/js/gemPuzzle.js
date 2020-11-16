@@ -84,5 +84,19 @@ export default class gemPuzzle {
 		btnAccept.innerText = 'Ok';
 		gameOver.appendChild(btnAccept);
 		
+		//apend child 
+		container.appendChild(this.update);
+		container.appendChild(gamefield);
+	
+		nav.appendChild(listButton);
+		nav.appendChild(button);
+		nav.appendChild(this.sound);    
+	
+		wrapper.appendChild(gameOver);
+		wrapper.appendChild(rating);
+		wrapper.appendChild(soundElement);
+		wrapper.appendChild(nav);
+		wrapper.appendChild(container);
+		
 	}
  }
