@@ -216,6 +216,84 @@ body {
 	transition: all 1s;
  }
 
+.key__ {
+	&1{
+		background: url("/src/assets/images/puzzle/image_part_001.jpg") no-repeat;
+		background-size: cover;
+	}
+	&2{
+		background: url("/src/assets/images/puzzle/image_part_002.jpg");
+		background-size: cover;
+	}
+	&3{
+		background: url("/src/assets/images/puzzle/image_part_003.jpg");
+		background-size: cover;
+	}
+	&4{
+		background: url("/src/assets/images/puzzle/image_part_004.jpg");
+		background-size: cover;
+	}
+	&5{
+		background: url("/src/assets/images/puzzle/image_part_005.jpg");
+		background-size: cover;
+	}
+	&6{
+		background: url("/src/assets/images/puzzle/image_part_006.jpg");
+		background-size: cover;
+	}
+	&7{
+		background: url("/src/assets/images/puzzle/image_part_007.jpg");
+		background-size: cover;
+	}
+	&8{
+		background: url("/src/assets/images/puzzle/image_part_008.jpg");
+		background-size: cover;
+	}
+	&9{
+		background: url("/src/assets/images/puzzle/image_part_009.jpg");
+		background-size: cover;
+	}
+	&10{
+		background: url("/src/assets/images/puzzle/image_part_010.jpg");
+		background-size: cover;
+	}
+	&11{
+		background: url("/src/assets/images/puzzle/image_part_011.jpg");
+		background-size: cover;
+	}
+	&12{
+		background: url("/src/assets/images/puzzle/image_part_012.jpg");
+		background-size: cover;
+	}
+	&13{
+		background: url("/src/assets/images/puzzle/image_part_013.jpg");
+		background-size: cover;
+	}
+	&14{
+		background: url("/src/assets/images/puzzle/image_part_014.jpg");
+		background-size: cover;
+	}
+	&15{
+		background: url("/src/assets/images/puzzle/image_part_015.jpg");
+		background-size: cover;
+	}
+	&16{
+	}
+}
+
+
+.time {
+	font-size: 1.3rem;
+	text-shadow: 1px 1px 15px rgba(150, 150, 150, 1);
+	color: #000;
+}
+
+.moves {
+	font-size: 1.3rem;
+	text-shadow: 1px 1px 15px rgba(150, 150, 150, 1);
+	color: #000;
+}
+
 
 
 
