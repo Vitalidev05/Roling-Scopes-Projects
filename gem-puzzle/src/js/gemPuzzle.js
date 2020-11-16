@@ -330,4 +330,15 @@ export default class gemPuzzle {
 			}
 		}
 	}
+ 
+	run() {  
+		this.init();
+
+		const list = document.querySelector(".top_list"); 
+		this.newGame = document.querySelector(".new-game");
+		this.newGame.addEventListener("click", () => this.startNewGame());
+		this.moves = document.querySelector(".moves");
+		this.sound = document.querySelector('.sound');
+		this.popup = document.querySelector('.popup');
+	}	
  }
