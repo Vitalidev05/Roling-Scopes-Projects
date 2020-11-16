@@ -51,5 +51,16 @@ export default class gemPuzzle {
 		container.classList.add("container");
 		gamefield.classList.add("gamefield");
 		
+		//add innerHTML 
+		listButton.innerHTML = "<img src='/src/assets/images/list-ol-solid.svg' class='top_list'></img>";
+		listButton.classList.add("button");
+		button.innerText = "New Game";
+	
+		this.sound.innerHTML = `<i class="material-icons">volume_down</i>`;
+		this.update.innerHTML = `
+			<span class="time">Time: 00:00:00</span>
+			<span class="moves">Moves: ${this.counter}</span>
+			`;
+		
 	}
  }
