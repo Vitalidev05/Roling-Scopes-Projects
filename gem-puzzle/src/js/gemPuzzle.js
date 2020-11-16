@@ -35,5 +35,21 @@ export default class gemPuzzle {
 		const rating = document.createElement('div');
 		const container = document.createElement("div");
 		const gamefield = document.createElement("section");
+		
+		//add classes  
+		this.sound.classList.add('sound');
+		this.sound.classList.add('on');
+		this.sound.classList.add('button'); 
+		this.update.classList.add("update");
+	
+		rating.classList.add("rating");
+		rating.classList.add("up-up");    
+		nav.classList.add("nav");
+		wrapper.classList.add("wrapper");
+		button.classList.add("new-game");
+		button.classList.add("button");   
+		container.classList.add("container");
+		gamefield.classList.add("gamefield");
+		
 	}
  }
