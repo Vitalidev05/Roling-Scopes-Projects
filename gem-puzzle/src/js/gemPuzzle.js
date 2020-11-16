@@ -186,5 +186,44 @@ export default class gemPuzzle {
 		return (parseInt(n, 10) < 10 ? '0' : '') + n;
 	}
  
+ 
+ //to start new game
+	startNewGame () {
+		//discharge current time
+		this.time = new Date();
+		this.time.setHours(0);
+		this.time.setMinutes(0);
+		this.time.setSeconds(0);
+		
+		//shuffle if it is solvable
+		
+		//get array with random numbers
+		this.random = this.gameArray.sort(() => Math.random() - 0.5);
+	
+		//sum in row shuld be even to solve this layout
+		let sum = 0;
+		let row = this.empty.top / this.keySize + 1;
+	
+		for (let i = 0; i < this.random.length; i++) {
+				let k = i + 1;
+				while (k < this.random.length) {
+				if (this.random[k] < this.random[i]) {
+					sum += 1;
+				}
+				k++;
+				}
+			
+		}
+		sum = sum + row;
+		//if sum is not even game is not solvable 
+		if (sum % 2 !== 0) { 
+			this.startNewGame();
+		}
+	
+		//else if it solvable  create new gameLayout and discharge counter
+		this.newGameLayout();
+		this.dischargeCounter();
+	}
+ 
 	}
  }
