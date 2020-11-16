@@ -17,4 +17,10 @@ export default class gemPuzzle {
 		this.fillArray(this.gameArray);
 	}
  
+	//fill array with numbers from 1 to size^2
+	fillArray(arr) {
+		for(let i = 1; i < this.size ** 2; i++) {
+			arr.push(i);
+		}
+	} 
  }
