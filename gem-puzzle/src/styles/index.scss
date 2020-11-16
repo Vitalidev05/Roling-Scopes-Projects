@@ -34,6 +34,20 @@ body {
 	justify-content: space-evenly;
 }
  
+.button {
+	font-size: 1.2rem;
+	outline: none;
+	background-color: #f4e29b;
+	box-shadow: 2px 2px 2px 0 rgb(122, 121, 121);
+	
+	border-radius: 5px;
+	margin-bottom: 2rem;
+}
+ 
+.button:hover {
+	cursor: pointer;
+}
+ 
 .container {
 }
 
