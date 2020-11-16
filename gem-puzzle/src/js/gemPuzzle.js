@@ -236,5 +236,14 @@ export default class gemPuzzle {
 			cell.id = this.random[i] - 1;
 		}
 	}
+ 
+	//to play sound
+	playSound () {
+		const audio = document.querySelector('.audio');
+		if (!audio) return;
+		audio.currentTime = 0;
+		audio.play();
+	}
+ 
 	}
  }
