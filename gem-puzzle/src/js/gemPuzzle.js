@@ -425,5 +425,14 @@ export default class gemPuzzle {
 	
 		this.fillRating();
 	
+		//to remove popup
+		document.querySelector('.accept').addEventListener('click', () => {
+			this.time.setHours(0);
+			this.time.setMinutes(0);
+			this.time.setSeconds(0);
+			this.popup.classList.add('up-up');
+			this.dischargeCounter();
+		})
+	
 	}	
  }
