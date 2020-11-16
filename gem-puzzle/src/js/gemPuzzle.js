@@ -108,5 +108,11 @@ export default class gemPuzzle {
 		//add DOM  gamefield
 		this.createGameField();
 	}
+ 
+	//init gamefield
+	createGameField () {
+		//init variables
+		this.gamefield = document.querySelector('.gamefield');    
+	}
 	}
  }
