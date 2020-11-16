@@ -117,6 +117,21 @@ export default class gemPuzzle {
 		//copy gameArray array to keysLayout
 		this.keysLayout =  this.gameArray.slice();
 		this.keysLayout.push('')
+		
+		//add DOM elemnets to the page
+		for (let i = 0; i <  this.size ** 2; i++) {
+			//init div element
+			let key = document.createElement("div");
+	
+			//add classes
+			key.className = 'key';
+			key.classList.add(`key__${i + 1}`);
+			key.innerHTML = this.keysLayout[i];
+	
+			//init coordinates
+			let top = 0;
+			let left = 0;
+	
 	}
 	}
  }
