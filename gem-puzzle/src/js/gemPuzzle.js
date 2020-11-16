@@ -132,6 +132,42 @@ export default class gemPuzzle {
 			let top = 0;
 			let left = 0;
 	
+			//create key grid
+			if (i <= this.size - 1) {
+				top = 0;
+				left = i *  this.keySize;
+			} else if (i > this.size - 1 && i <= this.size * 2 - 1) {
+				top =  this.keySize;
+				left = (i -  this.size) *  this.keySize;
+			} else if (i > this.size * 2 - 1 && i <= this.size * 3 - 1) {
+				top = (this.size - 2) *  this.keySize;
+				left = (i - this.size * 2) *  this.keySize;
+			} else {
+				top = (this.size - 1) *  this.keySize;
+				left = (i - this.size * 3) *  this.keySize;
+		}
+			
+			//move and animation of buttons happening due to change coordinates
+			key.style.left = `${left}px`;
+			key.style.top = `${top}px`;
+		
+			//add empty key
+			if (i ===  this.size ** 2 - 1) {
+				key.classList.add('empty');
+			}
+	
+			//append key to gamefield 
+			this.gamefield.append(key);
+		
+			//update gamekeys
+			this.gameKeys.push({
+				id: i,
+				top: top,
+				left: left,
+				key: key,
+			})
+		}
+	}
 	}
 	}
  }
