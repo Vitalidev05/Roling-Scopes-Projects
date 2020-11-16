@@ -168,6 +168,17 @@ export default class gemPuzzle {
 			})
 		}
 	}
+ 
+	//update time per 1 sec
+	updateTime() {
+		let hour = this.time.getHours(),
+		min = this.time.getMinutes(),
+		sec = this.time.getSeconds();	
+		
+		const timeElement = document.querySelector('.time'); 
+		timeElement.innerHTML = `Time: ${this.addZero(hour)}<span>:</span>${this.addZero(min)}<span>:</span>${this.addZero(sec)}`;
+		this.time.setSeconds(sec + 1);
+		setTimeout(() => this.updateTime(this.time), 1000);
 	}
 	}
  }
