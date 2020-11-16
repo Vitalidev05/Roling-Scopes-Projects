@@ -180,5 +180,11 @@ export default class gemPuzzle {
 		this.time.setSeconds(sec + 1);
 		setTimeout(() => this.updateTime(this.time), 1000);
 	}
+ 
+	//add zero in time if it needed
+	addZero(n) {
+		return (parseInt(n, 10) < 10 ? '0' : '') + n;
+	}
+ 
 	}
  }
