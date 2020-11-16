@@ -118,6 +118,15 @@ body {
 	cursor: default;
  }
  
+.hidden {
+	display: hidden;
+	position: absolute;
+	top: 0;left: 0;
+
+	width: 0px;
+	height: 0px;
+}
+ 
 }
 
 
