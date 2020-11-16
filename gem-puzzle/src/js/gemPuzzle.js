@@ -113,6 +113,10 @@ export default class gemPuzzle {
 	createGameField () {
 		//init variables
 		this.gamefield = document.querySelector('.gamefield');    
+	
+		//copy gameArray array to keysLayout
+		this.keysLayout =  this.gameArray.slice();
+		this.keysLayout.push('')
 	}
 	}
  }
