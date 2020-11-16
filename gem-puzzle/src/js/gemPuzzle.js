@@ -98,5 +98,15 @@ export default class gemPuzzle {
 		wrapper.appendChild(nav);
 		wrapper.appendChild(container);
 		
+		//add DOM elements to the page
+		document.body.appendChild(wrapper);
+	
+		//init variables
+		this.newGame = document.querySelector(".new-game");
+		this.popup = document.querySelector('.popup');
+	
+		//add DOM  gamefield
+		this.createGameField();
+	}
 	}
  }
