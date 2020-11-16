@@ -108,6 +108,16 @@ body {
 	cursor: pointer;
 }
  
+.empty {
+	background: rgba(150, 150, 150, 0);
+	z-index: 1;
+	border: none;
+}
+ 
+ .empty:hover {
+	cursor: default;
+ }
+ 
 }
 
 
