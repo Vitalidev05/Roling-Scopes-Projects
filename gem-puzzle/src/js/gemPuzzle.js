@@ -67,5 +67,22 @@ export default class gemPuzzle {
 		soundElement.classList.add('sound-play');
 		soundElement.classList.add('hidden');
 		soundElement.innerHTML = `<audio class="audio" src="/src/assets/sounds/sound.mp3"></audio>`;  
+		
+		//add popup on gameOver
+		const gameOver = document.createElement('div');
+		gameOver.classList.add('popup');
+		gameOver.classList.add('up-up');
+		gameOver.innerHTML = `<span>Congratulations! You won!</span>
+			<p class="time-count">Time: 00:00:00</p>
+			<p class="moves-count">Moves: 0</p>
+		`;
+	
+		//delete popup on click to button
+		const btnAccept = document.createElement('button');
+		btnAccept.classList.add('accept');
+		btnAccept.classList.add('button');
+		btnAccept.innerText = 'Ok';
+		gameOver.appendChild(btnAccept);
+		
 	}
  }
