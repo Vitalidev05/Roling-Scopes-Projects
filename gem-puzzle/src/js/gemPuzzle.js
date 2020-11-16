@@ -340,5 +340,81 @@ export default class gemPuzzle {
 		this.moves = document.querySelector(".moves");
 		this.sound = document.querySelector('.sound');
 		this.popup = document.querySelector('.popup');
+		
+		//update time 
+		this.time = new Date();
+		this.time.setHours(0);
+		this.time.setMinutes(0);
+		this.time.setSeconds(0);
+		this.updateTime();
+	
+		// to move cell on click
+		this.empty = this.gameKeys[this.size ** 2 - 1];
+		this.gameKeys.forEach(cell => {
+			cell.key.addEventListener('click', () => {
+				//move cells by swap their coordinates
+				if ((((cell.left + this.keySize === this.empty.left) || (cell.left - this.keySize === this.empty.left)) && (cell.top === this.empty.top)) || (((cell.top + this.keySize === this.empty.top) || (cell.top - this.keySize === this.empty.top)) && (cell.left === this.empty.left))) {
+				if (this.sound.classList.contains('on')) {
+					this.playSound();
+				}
+	
+				let leftTemp = this.empty.left;
+				let topTemp = this.empty.top;
+				this.empty.left = cell.left;
+				this.empty.top = cell.top;
+				cell.left = leftTemp;
+				cell.top = topTemp;
+	
+				//change styles to move key
+				this.empty.key.style.left = `${this.empty.left}px`;
+				this.empty.key.style.top = `${this.empty.top}px`;
+				cell.key.style.left = `${cell.left}px`;
+				cell.key.style.top = `${cell.top}px`;
+	
+				//moves counter
+				this.count();
+				}
+				//is game finished? 
+				if (this.counter > 1) {
+				//every key should stand in its place
+				const isFinished = this.gameKeys.every(picked => {
+					let place = picked.top / this.keySize * this.size + picked.left / this.keySize;
+					return picked.id === place;
+				})
+				if (isFinished) {
+					//get item from local storage
+					let test = localStorage.getItem('record');
+	
+					//if local storage is empty or not 
+					if(test !== null) {
+						let obj = JSON.parse(test);
+						//push current time and moves to local storage
+						obj.push({time: `${this.addZero(this.time.getHours())}<span>:</span>${this.addZero(this.time.getMinutes())}<span>:</span>${this.addZero(this.time.getSeconds())}`,
+						moves: this.counter});
+	
+						localStorage.setItem('record', JSON.stringify(obj));
+						
+					} else {
+						let object = [];
+						//push current time and moves to local storage
+						object.push({time: `${this.addZero(this.time.getHours())}<span>:</span>${this.addZero(this.time.getMinutes())}<span>:</span>${this.addZero(this.time.getSeconds())}`,
+						moves: this.counter});
+						localStorage.setItem('record', JSON.stringify(object));
+					}
+	
+	
+					//add time and moves on popup
+					let timeElement = document.querySelector('.time-count');
+					timeElement.innerHTML = `Time: ${this.addZero(this.time.getHours())}<span>:</span>${this.addZero(this.time.getMinutes())}<span>:</span>${this.addZero(this.time.getSeconds())}`;
+					const movesElement = document.querySelector('.moves-count');    
+					movesElement.innerHTML = `Moves: ${this.counter}`;
+					this.popup.classList.remove('up-up');
+					this.fillRating();
+					
+				}
+				}
+			})
+	
+		})
 	}	
  }
