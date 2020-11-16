@@ -258,4 +258,76 @@ export default class gemPuzzle {
 		this.moves.innerHTML = `Moves: ${this.counter}`;
 	}
  
+	//fill rating table with values from localStorage
+	fillRating() {  
+		//delete old table if needed
+		let topTable = document.querySelector(".top-table");
+		if(topTable) {
+			topTable.remove();
+		}
+		
+		const table = document.createElement("table");
+		const tr = document.createElement("tr");
+		const number = document.createElement("th");
+		const time = document.createElement("th");
+		const moves = document.createElement("th");
+	
+		table.classList.add("top-table");
+		number.classList.add("top-table__header");
+		time.classList.add("top-table__header");
+		moves.classList.add("top-table__header");
+		tr.classList.add("top-table__tr");
+	
+		number.innerHTML = "&#8470;";
+		time.innerHTML = "Time";
+		moves.innerHTML = "Moves";
+			
+		tr.appendChild(number);
+		tr.appendChild(time);
+		tr.appendChild(moves);
+		table.appendChild(tr);
+		this.rating.appendChild(table);
+	
+		if(localStorage.getItem('record')) {
+			//get value from localStorage
+			let test = localStorage.getItem('record');    
+			//and parse it
+			test = JSON.parse(test);
+			
+			//sort by moves
+			test.sort((a, b) => {
+				return a.moves - b.moves; 
+			});
+	
+			let count = test.length;
+			if(test.length > 10) {
+				count = 10;
+			}
+			//output first 10 values
+			for(let i = 0; i < count; i++) {      
+				let tr2 = document.createElement("tr");
+				let num2 = document.createElement("td");
+				let time2 = document.createElement("td");
+				let moves2 = document.createElement("td");
+	
+				tr2.classList.add("top-table__tr");
+				num2.classList.add("top-table__td");
+				time2.classList.add("top-table__td");
+				moves2.classList.add("top-table__td");
+	
+				let counter = test[i].moves;
+				let time = test[i].time;
+	
+				num2.innerHTML = i + 1;
+				time2.innerHTML = time;
+				moves2.innerHTML = counter;
+	
+				tr2.appendChild(num2);
+				tr2.appendChild(time2);
+				tr2.appendChild(moves2);
+	
+				table.appendChild(tr2);
+			}
+		}
+	}
  }
