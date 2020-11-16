@@ -62,5 +62,10 @@ export default class gemPuzzle {
 			<span class="moves">Moves: ${this.counter}</span>
 			`;
 		
+		//add sound
+		const soundElement = document.createElement('div');
+		soundElement.classList.add('sound-play');
+		soundElement.classList.add('hidden');
+		soundElement.innerHTML = `<audio class="audio" src="/src/assets/sounds/sound.mp3"></audio>`;  
 	}
  }
