@@ -201,6 +201,16 @@ body {
 	background-size: cover;
 }
 
+.top-table {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.top-table__tr:not(:last-child) {
+	border-bottom: 3px solid #cc9500;
+}
+
 
 
 
