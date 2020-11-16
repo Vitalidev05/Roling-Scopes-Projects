@@ -73,6 +73,17 @@ body {
 	padding: 0 0.5rem;
 }
  
+.gamefield {
+	overflow: hidden;
+	width: 100%;
+	height: 300px;
+	box-shadow: 2px 2px 2px 0 rgb(122, 121, 121);
+	border-radius: 5px;
+
+	position: relative;
+	background: url("/src/assets/images/oboik.ru.jpg");
+	background-size: cover;
+}
 }
 
 
