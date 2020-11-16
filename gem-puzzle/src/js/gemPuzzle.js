@@ -225,5 +225,16 @@ export default class gemPuzzle {
 		this.dischargeCounter();
 	}
  
+	//create new Layout
+	newGameLayout () {    
+		//create new Dom elements
+		for (let i = 0; i < this.random.length; i++) {
+			let cell = this.gameKeys[i];  
+			cell.key.innerHTML = `${this.random[i]}`;
+			cell.key.classList.add('key');
+			cell.key.classList.add(`key__${this.random[i]}`);
+			cell.id = this.random[i] - 1;
+		}
+	}
 	}
  }
