@@ -434,5 +434,17 @@ export default class gemPuzzle {
 			this.dischargeCounter();
 		})
 	
+		//add sound
+		this.sound.addEventListener('click', () => {
+			if (this.sound.classList.contains('on')) {
+				this.sound.classList.remove('on');
+				this.sound.innerHTML = `<i class="material-icons">volume_off</i>`;
+	
+			} else {
+				this.playSound();
+				this.sound.classList.add('on');
+				this.sound.innerHTML = `<i class="material-icons">volume_down</i>`;
+			}
+		}) 
 	}	
  }
