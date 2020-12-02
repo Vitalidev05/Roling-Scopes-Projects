@@ -138,6 +138,10 @@
     "no-console": "error",
     "no-alert": "error",
     "no-var": "error",
+    <<<<<<< HEAD
+=======
+    "no-duplicate-imports": "error",
+>>>>>>> 4d05bb8... feat: implement test version of the boilderplate
     "no-multiple-empty-lines": "error",
     "no-await-in-loop": "off",
     "prefer-const": "error",
@@ -157,7 +161,10 @@
       }
     ],
     "react/jsx-fragments" : ["error", "element"],
+    <<<<<<< HEAD
     "react/jsx-props-no-spreading": "off",
+=======
+>>>>>>> 4d05bb8... feat: implement test version of the boilderplate
     "space-before-function-paren": [
       "error",
       {

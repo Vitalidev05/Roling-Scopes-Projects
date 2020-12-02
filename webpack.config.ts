@@ -55,7 +55,11 @@ const config: Configuration = {
         exclude: /node_modules/,
       },
       {
+<<<<<<< HEAD
         test: /\.(png|jpg|gif)$/,
+=======
+        test: /\.(png|jpg|gif|svg)$/,
+>>>>>>> 4d05bb8... feat: implement test version of the boilderplate
         use: [
           {
             loader: 'url-loader',
@@ -80,6 +84,7 @@ const config: Configuration = {
       },
       formStylesRule(false),
       formStylesRule(true),
+<<<<<<< HEAD
       {
         test: /\.svg$/,
         loader: 'react-svg-loader',
@@ -90,6 +95,8 @@ const config: Configuration = {
           },
         },
       },
+=======
+>>>>>>> 4d05bb8... feat: implement test version of the boilderplate
     ],
   },
   resolve: {
@@ -104,7 +111,6 @@ const config: Configuration = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      favicon: './src/static/icons/favicon.ico',
       template: './index.html',
     }),
     new MiniCssExtractPlugin({

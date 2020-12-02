@@ -1,2 +1,5 @@
 node_modules
+<<<<<<< HEAD
 build
+=======
+>>>>>>> 4d05bb8... feat: implement test version of the boilderplate
