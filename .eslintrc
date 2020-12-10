@@ -138,10 +138,13 @@
     "no-console": "error",
     "no-alert": "error",
     "no-var": "error",
-    <<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 =======
     "no-duplicate-imports": "error",
 >>>>>>> 4d05bb8... feat: implement test version of the boilderplate
+=======
+>>>>>>> 34275eb... Fix svg loader, turn off no-duplicate-imports
     "no-multiple-empty-lines": "error",
     "no-await-in-loop": "off",
     "prefer-const": "error",
@@ -161,10 +164,14 @@
       }
     ],
     "react/jsx-fragments" : ["error", "element"],
-    <<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
     "react/jsx-props-no-spreading": "off",
 =======
 >>>>>>> 4d05bb8... feat: implement test version of the boilderplate
+=======
+    "react/jsx-props-no-spreading": "off",
+>>>>>>> 34275eb... Fix svg loader, turn off no-duplicate-imports
     "space-before-function-paren": [
       "error",
       {

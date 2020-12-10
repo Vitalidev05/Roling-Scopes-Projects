@@ -56,10 +56,14 @@ const config: Configuration = {
       },
       {
 <<<<<<< HEAD
+<<<<<<< HEAD
         test: /\.(png|jpg|gif)$/,
 =======
         test: /\.(png|jpg|gif|svg)$/,
 >>>>>>> 4d05bb8... feat: implement test version of the boilderplate
+=======
+        test: /\.(png|jpg|gif)$/,
+>>>>>>> 34275eb... Fix svg loader, turn off no-duplicate-imports
         use: [
           {
             loader: 'url-loader',
@@ -85,6 +89,9 @@ const config: Configuration = {
       formStylesRule(false),
       formStylesRule(true),
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 34275eb... Fix svg loader, turn off no-duplicate-imports
       {
         test: /\.svg$/,
         loader: 'react-svg-loader',
@@ -95,8 +102,11 @@ const config: Configuration = {
           },
         },
       },
+<<<<<<< HEAD
 =======
 >>>>>>> 4d05bb8... feat: implement test version of the boilderplate
+=======
+>>>>>>> 34275eb... Fix svg loader, turn off no-duplicate-imports
     ],
   },
   resolve: {
