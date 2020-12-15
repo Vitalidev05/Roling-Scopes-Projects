@@ -1,1 +1,1 @@
-# webpack-boilerplate
+# covid-dashboard
