@@ -1,0 +1,16 @@
+.footer {
+  flex: 0 0 auto;
+  display: flex;
+  background: linear-gradient(40deg, #818181, #777777);
+  justify-content: space-around;
+  align-items: center;
+  min-height: 50px;
+
+  img {
+    width: 30px;
+  }
+
+  & .school-link img {
+    width: 50px;
+  }
+}
