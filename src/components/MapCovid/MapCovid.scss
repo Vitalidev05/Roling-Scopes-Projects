@@ -2,17 +2,6 @@
   position: relative;
   width: 100%;
   height: 100%;
-  background-color: green;
-}
-
-.open-map-covid {
-  position: absolute;
-  z-index: 3;
-  top: 0.5%;
-  left: 0.5%;
-  width: 99%;
-  height: 99%;
-  background-color: green;
 }
 
 .close {
@@ -33,4 +22,9 @@
   &:hover {
     fill: rgba(17, 17, 17, 0.651);
   }
+}
+
+.mapBox {
+  width: 100%;
+  height: 100%;
 }

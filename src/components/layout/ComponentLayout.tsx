@@ -9,12 +9,16 @@ import MinimizeIcon from '../icons/MinimizeIcon';
 
 interface PropsCL extends HTMLAttributes<HTMLElement> {
   children: React.ReactNode;
+  onclickExpend?: () => void;
 }
 
-const ComponentLayout: FunctionComponent<PropsCL> = ({ children }) => {
+const ComponentLayout: FunctionComponent<PropsCL> = ({ onclickExpend, children }) => {
   const [open, setOpen] = useState(false);
   const handlerClickExpand = () => {
     setOpen(prev => !prev);
+    if (onclickExpend) {
+      onclickExpend();
+    }
   };
   const expandIcon = open ? (
     <MinimizeIcon className={styles['expand-li-icon']} />
