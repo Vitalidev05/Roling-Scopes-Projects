@@ -2,6 +2,12 @@ import React from 'react';
 
 import styles from '@/components/GraphCovid/GraphCovid.scss';
 
-const GraphCovid = (): JSX.Element => <div className={styles['graph-covid']}>GraphCovid</div>;
+import ComponentLayout from '../layout';
+
+const GraphCovid = (): JSX.Element => (
+  <ComponentLayout>
+    <div className={styles['graph-covid']}>GraphCovid</div>
+  </ComponentLayout>
+);
 
 export default GraphCovid;

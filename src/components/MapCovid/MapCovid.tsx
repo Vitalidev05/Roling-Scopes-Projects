@@ -1,30 +1,14 @@
 import classNames from 'classnames';
-import React, { useState } from 'react';
+import React from 'react';
 
 import styles from '@/components/MapCovid/MapCovid.scss';
 
-import MaximizeIcon from '../icons/MaximizeIcon';
-import MinimizeIcon from '../icons/MinimizeIcon';
+import ComponentLayout from '../layout';
 
-const MapCovid = (): JSX.Element => {
-  const [open, setOpen] = useState(false);
-  const handlerClickExpand = () => {
-    setOpen(prev => !prev);
-  };
-  const expandIcon = open ? (
-    <MinimizeIcon className={styles['expand-li-icon']} />
-  ) : (
-    <MaximizeIcon className={styles['expand-li-icon']} />
-  );
-  const classesMap = classNames(styles['map-covid'], open && styles['open-map-covid']);
-  return (
-    <div className={classesMap}>
-      MapCovid
-      <button className={styles['close']} type="button" onClick={() => handlerClickExpand()}>
-        {expandIcon}
-      </button>
-    </div>
-  );
-};
+const MapCovid = (): JSX.Element => (
+  <ComponentLayout>
+    <div className={classNames(styles['map-covid'])}>Map</div>
+  </ComponentLayout>
+);
 
 export default MapCovid;
