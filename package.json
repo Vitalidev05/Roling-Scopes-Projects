@@ -96,6 +96,7 @@
     "eslint-plugin-react": "^7.21.0",
     "eslint-plugin-react-hooks": "^4.1.2",
     "file-loader": "^6.1.0",
+    "geojson": "^0.5.0",
     "glob-all": "^3.2.1",
     "html-webpack-plugin": "^4.5.0",
     "husky": "^4.3.0",
@@ -137,6 +138,7 @@
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0"
 <<<<<<< HEAD
+<<<<<<< HEAD
   },
   "devDependencies": {
     "@babel/plugin-proposal-class-properties": "^7.12.1",
@@ -146,5 +148,10 @@
     "chart.js": "^2.9.4"
 =======
 >>>>>>> 4d05bb8... feat: implement test version of the boilderplate
+=======
+  },
+  "devDependencies": {
+    "chart.js": "^2.9.4"
+>>>>>>> 5447874... feat: setup 'chart.js' lib
   }
 }
