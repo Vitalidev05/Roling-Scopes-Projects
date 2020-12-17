@@ -1,16 +1,16 @@
 {
   "name": "webpack-boilerplate",
   "version": "0.1.0",
-  "description": "Webpack react+typescript boilerplate",
+  "description": "covid-dashboard",
   "main": "src/index.tsx",
   "author": "Alexey-Koren",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Alexey-Koren/webpack-boilerplate/issues"
+    "url": "https://github.com/SkaymanT/covid-dashboard/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Alexey-Koren/webpack-boilerplate.git"
+    "url": "git+https://github.com/SkaymanT/covid-dashboard.git"
   },
   "scripts": {
     "dev": "webpack-dev-server --open --hot -d",

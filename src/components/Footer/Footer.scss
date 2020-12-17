@@ -7,10 +7,15 @@
   min-height: 50px;
 
   img {
-    width: 30px;
-  }
-
-  & .school-link img {
     width: 50px;
+  }
+}
+
+.footer-li-icon {
+  width: 30px;
+  height: 30px;
+
+  &:hover {
+    fill: rgb(0, 255, 85);
   }
 }
