@@ -36,8 +36,13 @@
     "lint:fix-staged": "eslint --fix",
     "fix": "run-s prettier:format lint:fix",
     "fix-staged": "lint-staged",
+<<<<<<< HEAD
     "svgo": "svgo --pretty --indent=2 --disable=removeViewBox,mergePaths --enable=inlineStyles  --config svgo-config.json $FILE",
     "svgo-all": "svgo -r -f src --pretty --indent=2 --disable=removeViewBox,mergePaths --enable=inlineStyles  --config svgo-config.json $FILE"
+=======
+    "svgo": "cross-env svgo --pretty --indent=2 --disable=removeViewBox,mergePaths --enable=inlineStyles  --config svgo-config.json $FILE",
+    "svgo-all": "cross-env svgo -r -f src --pretty --indent=2 --disable=removeViewBox,mergePaths --enable=inlineStyles  --config svgo-config.json"
+>>>>>>> fada592... Fix svgo script to work on Windows
   },
   "dependencies": {
     "@babel/core": "^7.11.6",
