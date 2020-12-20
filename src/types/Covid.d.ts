@@ -35,12 +35,6 @@ export interface ICountryInfo {
   flag: string;
 }
 
-export interface ICategory {
-  name: string;
-  id: string;
-  checked: boolean;
-}
-
 export type LngLatLike =
   | [number, number]
   | LngLat
@@ -62,6 +56,7 @@ export interface Geometry {
 export interface GeoJsonProperties {
   id: number;
   country: string;
+  province: string;
   cases: number;
   deaths: number;
   iso: string;
