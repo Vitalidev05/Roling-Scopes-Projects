@@ -102,8 +102,8 @@ const MapCovid = (): JSX.Element => {
             const cases = Number(e.features![0].properties!.cases);
             const deaths = Number(e.features![0].properties!.deaths);
             const country = String(e.features![0].properties!.country);
-            const province = String(e.features![0].properties!.cases);
-            const iso = String(e.features![0].properties!.cases);
+            const province = String(e.features![0].properties!.province);
+            const iso = String(e.features![0].properties!.iso);
             map.getCanvas().style.cursor = 'pointer';
             if (e.features![0].geometry.type === 'Point') {
               const coordinates = e.features![0].geometry.coordinates.slice();
