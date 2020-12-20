@@ -104,6 +104,7 @@ const config: Configuration = {
   },
   plugins: [
     new HtmlWebpackPlugin({
+      favicon: './src/static/icons/favicon.ico',
       template: './index.html',
     }),
     new MiniCssExtractPlugin({

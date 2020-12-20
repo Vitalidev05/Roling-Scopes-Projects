@@ -15,20 +15,23 @@
 
 .close {
   position: absolute;
-  top: 5px;
-  right: 5px;
+  top: 0;
+  right: 0;
+  width: 2rem;
+  height: 2rem;
+  color: #ffffffe5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   &:hover {
     cursor: pointer;
+    color: rgba(116, 2, 2, 0.925);
   }
 }
 
 .expand-li-icon {
   display: block;
   width: 1rem;
-  height: 1rem;
-
-  &:hover {
-    fill: rgba(17, 17, 17, 0.651);
-  }
+  height: 1rem;  
 }

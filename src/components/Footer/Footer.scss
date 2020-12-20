@@ -14,8 +14,9 @@
 .footer-li-icon {
   width: 30px;
   height: 30px;
+  color: #000000;
 
   &:hover {
-    fill: rgb(0, 255, 85);
+    color: rgb(255, 255, 255);
   }
 }
