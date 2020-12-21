@@ -15,7 +15,7 @@ const Chart = (): JSX.Element => {
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 /* eslint-disable react/destructuring-assignment */
 import axios from 'axios';
-import React, { /* Component, */ useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Line } from 'react-chartjs-2';
 
 const Chart = (): JSX.Element => {
