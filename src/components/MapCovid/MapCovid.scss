@@ -1,5 +1,5 @@
 .map-covid {
-  position: relative;
+  position: absolute;
   width: 100%;
   height: 100%;
 }
@@ -7,4 +7,20 @@
 .mapBox {
   width: 100%;
   height: 100%;
+  
+  p {
+    border-bottom: 1px solid rgba(black, 0.2);
+
+    b {
+      font-size: 16px;
+      color: #212121;
+      padding: 0 5px;
+    }
+  }
+
+  img {
+    display: block;
+    width: 3rem;
+    height: 3rem;
+  }
 }
