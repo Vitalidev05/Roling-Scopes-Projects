@@ -5,7 +5,7 @@ import React, { useEffect, useRef, useState } from 'react';
 
 import styles from '@/components/MapCovid/MapCovid.scss';
 import 'mapbox-gl/dist/mapbox-gl.css';
-import { mapBoxToken } from '@/constants';
+import { mapBoxToken, layers, categories } from '@/constants';
 import { useCovidMapService } from '@/services';
 import convertCovidToMapCovids from '@/utils';
 
