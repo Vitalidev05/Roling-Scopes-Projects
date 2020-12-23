@@ -1,6 +1,7 @@
 import React from 'react';
 import { Column } from 'react-table';
 
+import styles from '@/components/ListCovid/ListCovid.scss';
 import List from '@/components/ListCovid/list/List';
 
 import ComponentLayout from '../layout';
@@ -15,8 +16,12 @@ const tableColumns = [
   {
     Header: 'Country',
     accessor: 'country',
-    width: 100,
-    Cell: ({ row }) => (row.original.country === null ? '-' : row.original.country),
+    width: 70,
+    Cell: ({ row }) => (row.original.country === null ? (
+      '-'
+    ) : (
+      <span className={styles['list-span']}>{row.original.country}</span>
+    )),
   },
   {
     Header: 'Icon',
@@ -25,17 +30,23 @@ const tableColumns = [
     Cell: ({ row }) => (row.original.flag === null ? (
       0
     ) : (
-      <img
-        src={`https://www.countryflags.io/${row.original.flag}/shiny/32.png`}
-        alt={`flag_${row.original.flag}`}
-      />
+      <span className={styles['list-span']}>
+        <img
+          src={`https://www.countryflags.io/${row.original.flag}/shiny/32.png`}
+          alt={`flag_${row.original.flag}`}
+        />
+      </span>
     )),
   },
   {
     Header: 'Total',
     accessor: 'total',
-    width: 100,
-    Cell: ({ row }) => (row.original.total === null ? 0 : row.original.total),
+    width: 70,
+    Cell: ({ row }) => (row.original.total === null ? (
+      0
+    ) : (
+      <span className={styles['list-span']}>{row.original.total}</span>
+    )),
   },
 ] as Column<TestData>[];
 
@@ -105,7 +116,9 @@ const ListCovid = (): JSX.Element => {
 
   return (
     <ComponentLayout>
-      <List<TestData> columns={tableColumns} data={tableData} />
+      <div className={styles['list-covid']}>
+        <List<TestData> columns={tableColumns} data={tableData} />
+      </div>
     </ComponentLayout>
   );
 };
