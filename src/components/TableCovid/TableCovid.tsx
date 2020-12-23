@@ -19,7 +19,7 @@ const tableColumns = [
   {
     Header: 'Country',
     accessor: 'country',
-    width: 70,
+    width: 90,
     Cell: ({ row }) => (row.original.country === null ? (
       '-'
     ) : (
@@ -77,7 +77,7 @@ const tableColumns1 = [
   {
     Header: 'Country',
     accessor: 'country',
-    width: 70,
+    width: 90,
     Cell: ({ row }) => (row.original.country === null ? (
       '-'
     ) : (
@@ -135,7 +135,7 @@ const tableColumns2 = [
   {
     Header: 'Country',
     accessor: 'country',
-    width: 70,
+    width: 90,
     Cell: ({ row }) => (row.original.country === null ? (
       '-'
     ) : (
@@ -267,15 +267,17 @@ const TableCovid = (): JSX.Element => {
   return (
     <ComponentLayout>
       <div className={styles['table-covid']}>
-        <button type="button" className={styles['list-button']} onClick={() => setStateTest(1)}>
-          Death
-        </button>
-        <button type="button" className={styles['list-button']} onClick={() => setStateTest(0)}>
-          Cases
-        </button>
-        <button type="button" className={styles['list-button']} onClick={() => setStateTest(2)}>
-          Recovered
-        </button>
+        <div className={styles['button-container']}>
+          <button type="button" className={styles['list-button']} onClick={() => setStateTest(1)}>
+            Death
+          </button>
+          <button type="button" className={styles['list-button']} onClick={() => setStateTest(0)}>
+            Cases
+          </button>
+          <button type="button" className={styles['list-button']} onClick={() => setStateTest(2)}>
+            Recovered
+          </button>
+        </div>
         <Table<TestData> columns={stateHeader} data={stateList} />
       </div>
     </ComponentLayout>
