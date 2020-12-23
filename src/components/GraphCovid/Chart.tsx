@@ -130,7 +130,7 @@ const Chart = (): JSX.Element => {
   }
 
   return (
-    <div>
+    <React.Fragment>
       <h1>Covid-cases</h1>
       <div className={styles['nav-bar-wrapper']}>
         <div className={styles['nav-bar']}>
@@ -157,11 +157,13 @@ const Chart = (): JSX.Element => {
           </button>
         </div>
       </div>
-      <div>
-        {typeOfChart['typeChart'] === 'pie' && <Pies />}
-        {typeOfChart['typeChart'] === 'line' && <Lines />}
+      <div className={styles['graph-container']}>
+        <div className={styles['graph-pie']}>
+          {typeOfChart['typeChart'] === 'pie' && <Pies />}
+          {typeOfChart['typeChart'] === 'line' && <Lines />}
+        </div>
       </div>
-    </div>
+    </React.Fragment>
   );
 };
 

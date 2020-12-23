@@ -1,21 +1,31 @@
 .graph-covid {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
   width: 100%;
   height: 100%;
   background: radial-gradient(100% 215.42% at 0% 0%, #d6d6d6 0%, #adadad 100%), #211f20;
 
+  @media (max-width: 900px) {
+    height: 650px;
+  }
   h1 {
     padding: 10px 20px;
     color: white;
     text-shadow: 0 0 2px 1px black;
   }
 }
+.graph-container {
+  position: relative;
+  min-height: calc(100% - 100px);
 
-.graph-pie {
-  position: absolute;
-  width: 100%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  .graph-pie {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 }
 
 .nav-bar-wrapper {
