@@ -54,7 +54,7 @@ const tableColumns = [
   {
     Header: 'Day one',
     accessor: 'dayone',
-    width: 90,
+    width: 70,
     Cell: ({ row }) => (row.original.dayone === null ? (
       0
     ) : (
@@ -64,7 +64,7 @@ const tableColumns = [
   {
     Header: 'per 100k',
     accessor: 'per100k',
-    width: 90,
+    width: 60,
     Cell: ({ row }) => (row.original.per100k === null ? (
       0
     ) : (
