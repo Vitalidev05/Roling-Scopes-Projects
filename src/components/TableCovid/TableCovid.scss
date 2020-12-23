@@ -1,5 +1,21 @@
 .table-covid {
   width: 100%;
   height: 100%;
-  background-color: gray;
+  background: radial-gradient(100% 215.42% at 0% 0%, #7c7c7c 0%, #636363 100%), #211f20;
+}
+
+.list-span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.list-button {
+  font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  background-color: #202020;
+  font-size: 12px;
+  font-weight: bold;
+  color: #fff;
+  padding: 5px;
+  margin: 5px;
 }
