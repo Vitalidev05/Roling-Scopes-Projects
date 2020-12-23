@@ -1,13 +1,15 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import React, { useState, useEffect } from 'react';
-import { Pie } from 'react-chartjs-2';
+import { Pie, Line } from 'react-chartjs-2';
 
 import styles from '@/components/GraphCovid/GraphCovid.scss';
 
 const Chart = (): JSX.Element => {
-  const [chartDataTotal, setChartDataTotal] = useState({});
-  /*   function transformDate(date: string): string {
+  const [chartData, setChartData] = useState({});
+  const [typeOfChart, setTypeOfChart] = useState({});
+
+  function transformDate(date: string): string {
     const options = {
       day: 'numeric',
       month: 'numeric',
@@ -15,20 +17,19 @@ const Chart = (): JSX.Element => {
     };
     const dateTransformed = new Date(date);
     return dateTransformed.toLocaleString('ru', options);
-  } */
+  }
 
-  function fn1() {
+  function createNewStateTotalCases() {
     fetch('https://api.covid19api.com/summary')
       .then(response => response.json())
       .then(res => {
         const dateWithCases = res.Global.TotalConfirmed;
         const totalDeaths = res.Global.TotalDeaths;
         const totalRecovered = res.Global.TotalRecovered;
-        setChartDataTotal({
+        setChartData({
           labels: ['TotalConfirmed', 'TotalDeaths', 'TotalRecovered'],
           datasets: [
             {
-              label: 'test',
               data: [dateWithCases, totalDeaths, totalRecovered],
               backgroundColor: [
                 ['rgba(75, 192, 85, 0.6)'],
@@ -39,22 +40,24 @@ const Chart = (): JSX.Element => {
             },
           ],
         });
+        setTypeOfChart({
+          typeChart: 'pie',
+        });
       })
-      .catch((error: Error) => setChartDataTotal({ error }));
+      .catch((error: Error) => setChartData({ error }));
   }
 
-  function fn2() {
+  function createNewStateNewCases() {
     fetch('https://api.covid19api.com/summary')
       .then(response => response.json())
       .then(res => {
         const numberOfCases = res.Global.NewConfirmed;
         const newDeaths = res.Global.NewDeaths;
         const newRecovered = res.Global.NewRecovered;
-        setChartDataTotal({
+        setChartData({
           labels: ['NewConfirmed', 'NewDeaths', 'NewRecovered'],
           datasets: [
             {
-              label: 'test',
               data: [numberOfCases, newDeaths, newRecovered],
               backgroundColor: [
                 ['rgba(150, 90, 192, 0.6)'],
@@ -65,38 +68,98 @@ const Chart = (): JSX.Element => {
             },
           ],
         });
+        setTypeOfChart({
+          typeChart: 'pie',
+        });
       })
-      .catch((error: Error) => setChartDataTotal({ error }));
+      .catch((error: Error) => setChartData({ error }));
+  }
+
+  function createNewStateForCountry(country: string, cases: string) {
+    fetch(`https://api.covid19api.com/country/${country}/status/${cases}`)
+      .then(response => response.json())
+      .then((res: []) => {
+        const newCases = res.map((el: Record<string, number>) => el['Cases']);
+        const newDate = res.map((el: Record<string, string>) => transformDate(el['Date']));
+        setChartData({
+          labels: newDate,
+          datasets: [
+            {
+              label: `Cases for ${country.toUpperCase()}: ${cases}`,
+              data: newCases,
+              backgroundColor: [
+                ['rgba(150, 90, 192, 0.6)'],
+                ['rgba(200, 192, 192, 0.6)'],
+                ['rgba(230, 70, 192, 0.6)'],
+              ],
+              borderWidth: 4,
+            },
+          ],
+        });
+        setTypeOfChart({
+          typeChart: 'line',
+        });
+      })
+      .catch((error: Error) => setChartData({ error }));
   }
 
   useEffect(() => {
-    fn1();
+    createNewStateTotalCases();
   }, []);
+
+  function Pies() {
+    return (
+      <Pie
+        data={chartData}
+        options={{
+          responsive: true,
+        }}
+      />
+    );
+  }
+
+  function Lines() {
+    return (
+      <Line
+        data={chartData}
+        options={{
+          responsive: true,
+        }}
+      />
+    );
+  }
 
   return (
     <div>
       <h1>Covid-cases</h1>
       <div className={styles['nav-bar-wrapper']}>
         <div className={styles['nav-bar']}>
-          <button className={styles['nav-bar__button']} type="button" onClick={() => fn1()}>
-            One
+          <button
+            className={styles['nav-bar__button']}
+            type="button"
+            onClick={() => createNewStateTotalCases()}
+          >
+            Total Cases
           </button>
-          <button className={styles['nav-bar__button']} type="button" onClick={() => fn2()}>
-            Two
+          <button
+            className={styles['nav-bar__button']}
+            type="button"
+            onClick={() => createNewStateNewCases()}
+          >
+            Daily Cases
           </button>
-          <button className={styles['nav-bar__button']} type="button">
-            Three
+          <button
+            className={styles['nav-bar__button']}
+            type="button"
+            onClick={() => createNewStateForCountry('ukraine', 'confirmed')}
+          >
+            For Country...
           </button>
         </div>
       </div>
-      <div className={styles['graph-pie']}>
-        <Pie
-          data={chartDataTotal}
-          options={{
-            responsive: true,
-            title: { text: 'Total cases', display: true },
-          }}
-        />
+      <div>
+        {typeOfChart['typeChart'] === 'pie' && <Pies />}
+        {typeOfChart['typeChart'] === 'line' && <Lines />}
       </div>
     </div>
   );
