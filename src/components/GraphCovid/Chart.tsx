@@ -21,7 +21,7 @@ const Chart = (): JSX.Element => {
 
   function createNewStateTotalCases() {
     fetch('https://api.covid19api.com/summary')
-      .then(response => response.json())
+      .then((response: Response) => response.json())
       .then(res => {
         const dateWithCases = res.Global.TotalConfirmed;
         const totalDeaths = res.Global.TotalDeaths;
@@ -49,7 +49,7 @@ const Chart = (): JSX.Element => {
 
   function createNewStateNewCases() {
     fetch('https://api.covid19api.com/summary')
-      .then(response => response.json())
+      .then((response: Response) => response.json())
       .then(res => {
         const numberOfCases = res.Global.NewConfirmed;
         const newDeaths = res.Global.NewDeaths;
@@ -77,7 +77,7 @@ const Chart = (): JSX.Element => {
 
   function createNewStateForCountry(country: string, cases: string) {
     fetch(`https://api.covid19api.com/country/${country}/status/${cases}`)
-      .then(response => response.json())
+      .then((response: Response) => response.json())
       .then((res: []) => {
         const newCases = res.map((el: Record<string, number>) => el['Cases']);
         const newDate = res.map((el: Record<string, string>) => transformDate(el['Date']));
