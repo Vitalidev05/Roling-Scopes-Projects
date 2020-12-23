@@ -1,8 +1,11 @@
 .table-element {
-  padding: 1rem;
+  padding: .5rem;
+  position: relative;
   display: flex;
   flex-direction: column;
   position: relative;
+  overflow: auto;
+  max-height: 80vh;
 
   .tr {
     border-collapse: collapse;
@@ -12,25 +15,46 @@
   .th {
     text-align: center;
     margin: 0;
-    padding: 1rem;
+	 padding: .5rem;
+	 font-size: 18px;
+	 color: #d6d6d6;
   }
 
   .td {
+	 display: flex !important;
     margin: 0;
-    padding: 0 1rem;
+    padding: .5rem;
     text-align: center;
-    display: flex;
-  }
-}
+	 display: flex;
+	 font-size: 18px;
 
-.table-pagination {
-  padding: 0.5rem;
+	 &:first-child {
+		color: #d6d6d6;
+	 }
+	 &:last-child {
+		color: #e60000;
+		font-weight: bold;
+	 }
+  }
 }
 
 .table {
   background-color: #000;
+  overflow: auto;
 }
 
 .covid {
   background-color: #525252;
+}
+
+.table-filter {
+	display: flex;
+	padding: 5px;
+	font-size: 18px;
+	color: #d6d6d6;
+}
+
+.table-type {
+	width: 100%;
+	max-width: 120px;
 }
