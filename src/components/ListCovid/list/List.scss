@@ -2,9 +2,15 @@
   padding: 0.5rem;
   position: relative;
   display: flex;
+  justify-content: center;
   flex-direction: column;
   position: relative;
   overflow: auto;
+  margin: 0 auto;
+  background-color: #2a2a2a;
+  border-radius: 15px;
+  width: 220px;
+  
   max-height: 80vh;
 
   .tr {
@@ -16,8 +22,8 @@
     text-align: center;
     margin: 0;
     padding: 0.5rem;
-    font-size: 18px;
-    color: #d6d6d6;
+    font-size: 16px;
+    color: #fff;
   }
 
   .td {
@@ -26,7 +32,7 @@
     padding: 0.5rem;
     text-align: center;
     display: flex;
-    font-size: 18px;
+    font-size: 16px;
 
     &:first-child {
       color: #d6d6d6;
@@ -41,20 +47,28 @@
 .table {
   background-color: #000;
   overflow: auto;
+  
 }
 
 .covid {
   background-color: #525252;
 }
 
-.table-filter {
-  display: flex;
-  padding: 5px;
-  font-size: 18px;
-  color: #d6d6d6;
-}
-
 .table-type {
   width: 100%;
   max-width: 120px;
+  margin: 0 10px;
+	background-color: #f9f9f9;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.table-filter {
+	display: flex;
+	justify-content: center;
+	padding: 5px;
+	font-size: 18px;
+	color: #d6d6d6;
+  align-items: center;
+  margin-bottom: 5px;
 }
