@@ -40,7 +40,7 @@ const tableColumns = [
     )),
   },
   {
-    Header: 'Total',
+    Header: 'Cases',
     accessor: 'total',
     width: 80,
     Cell: ({ row }) => (row.original.total === null ? (
@@ -116,7 +116,7 @@ const tableColumns2 = [
     )),
   },
   {
-    Header: 'Recovered',
+    Header: 'Recover',
     accessor: 'total',
     width: 80,
     Cell: ({ row }) => (row.original.total === null ? (
@@ -137,7 +137,6 @@ const ListCovid = (): JSX.Element => {
   useEffect(() => {
     if (dataBefore.status === 'loaded') {
       let obj: TestData[] = [];
-
       for (let i = 0; i < dataBefore.data.length; i += 1) {
         const newobj: TestData[] = [
           {
@@ -202,7 +201,7 @@ const ListCovid = (): JSX.Element => {
           Death
         </button>
         <button type="button" className={styles['list-button']} onClick={() => setStateTest(0)}>
-          Total
+          Cases
         </button>
         <button type="button" className={styles['list-button']} onClick={() => setStateTest(2)}>
           Recovered
