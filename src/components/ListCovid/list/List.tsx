@@ -35,14 +35,25 @@ function List<T extends object = {}>({ data, columns }: TableProps<T>): JSX.Elem
     usePagination
   );
 
-  // const count: number = preGlobalFilteredRows.length;
-  // // const [value, setValue] = React.useState(globalFilter);
-  // const onChange = useAsyncDebounce(value => {
-  //   setGlobalFilter(value || undefined)
-  // }, 200);
-
   return (
     <Fragment>
+      <div className={styles['table-pagination']}>
+        <span className={classNames(styles['table-filter'])}>
+          Search:
+          {' '}
+          <input
+            className={classNames(styles['table-type'])}
+            onChange={e => {
+              setGlobalFilter(e.target.value || undefined); // Set undefined to remove the filter entirely
+            }}
+            placeholder=" type to search"
+            style={{
+              fontSize: '1.1rem',
+              border: '0',
+            }}
+          />
+        </span>
+      </div>
       <div {...getTableProps()} className={classNames(styles['table-element'], 'table')}>
         <div>
           {headerGroups.map(headerGroup => (
@@ -77,67 +88,6 @@ function List<T extends object = {}>({ data, columns }: TableProps<T>): JSX.Elem
               );
             })}
         </div>
-      </div>
-      <div className={styles['table-pagination']}>
-        {/* <button type="button" onClick={() => gotoPage(0)} disabled={!canPreviousPage}>
-          {'<<'}
-        </button>
-        {' '}
-        <button type="button" onClick={() => previousPage()} disabled={!canPreviousPage}>
-          {'<'}
-        </button>
-        {' '}
-        <button type="button" onClick={() => nextPage()} disabled={!canNextPage}>
-          {'>'}
-        </button>
-        {' '}
-        <button type="button" onClick={() => gotoPage(pageCount - 1)} disabled={!canNextPage}>
-          {'>>'}
-        </button>
-        {' '}
-        <span>
-          Page
-          {' '}
-          <strong>
-            {pageIndex + 1}
-            {' '}
-            of
-            {pageOptions.length}
-          </strong>
-          {' '}
-        </span>
-        <span>
-          | Go to page:
-          {' '}
-          <input
-            type="number"
-            min="1"
-            max={pageCount}
-            value={pageIndex + 1}
-            onChange={e => {
-              const paginationPage = e.currentTarget.value ? +e.currentTarget.value - 1 : 0;
-              if (paginationPage < pageCount) {
-                gotoPage(paginationPage);
-              }
-            }}
-            style={{ width: '100px' }}
-          />
-
-        </span> */}
-        <span>
-          Search:
-          {' '}
-          <input
-            onChange={e => {
-              setGlobalFilter(e.target.value || undefined); // Set undefined to remove the filter entirely
-            }}
-            placeholder="type to search"
-            style={{
-              fontSize: '1.1rem',
-              border: '0',
-            }}
-          />
-        </span>
       </div>
     </Fragment>
   );
