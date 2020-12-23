@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Column } from 'react-table';
 
-import List from '@/components/ListCovid/List/List';
 import styles from '@/components/ListCovid/ListCovid.scss';
+import List from '@/components/ListCovid/list/List';
 import { useCovidMapService } from '@/services';
 
 import ComponentLayout from '../layout';
