@@ -1,5 +1,5 @@
 .table-element {
-  padding: .5rem;
+  padding: 0.5rem;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -15,26 +15,26 @@
   .th {
     text-align: center;
     margin: 0;
-	 padding: .5rem;
-	 font-size: 18px;
-	 color: #d6d6d6;
+    padding: 0.5rem;
+    font-size: 18px;
+    color: #d6d6d6;
   }
 
   .td {
-	 display: flex !important;
+    display: flex !important;
     margin: 0;
-    padding: .5rem;
+    padding: 0.5rem;
     text-align: center;
-	 display: flex;
-	 font-size: 18px;
+    display: flex;
+    font-size: 18px;
 
-	 &:first-child {
-		color: #d6d6d6;
-	 }
-	 &:last-child {
-		color: #e60000;
-		font-weight: bold;
-	 }
+    &:first-child {
+      color: #d6d6d6;
+    }
+    &:last-child {
+      color: #e60000;
+      font-weight: bold;
+    }
   }
 }
 
@@ -48,13 +48,13 @@
 }
 
 .table-filter {
-	display: flex;
-	padding: 5px;
-	font-size: 18px;
-	color: #d6d6d6;
+  display: flex;
+  padding: 5px;
+  font-size: 18px;
+  color: #d6d6d6;
 }
 
 .table-type {
-	width: 100%;
-	max-width: 120px;
+  width: 100%;
+  max-width: 120px;
 }
