@@ -1,3 +1,3 @@
-import List from '@/components/ListCovid/list/List';
+import List from '@/components/ListCovid/List/List';
 
 export default List;
