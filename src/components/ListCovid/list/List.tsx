@@ -11,7 +11,7 @@ import {
   useGlobalFilter,
 } from 'react-table';
 
-import styles from '@/components/ListCovid/list/List.scss';
+import styles from '@/components/ListCovid/List/List.scss';
 
 type TableProps<T extends object = {}> = TableOptions<T>;
 
