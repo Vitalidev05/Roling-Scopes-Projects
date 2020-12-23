@@ -55,15 +55,7 @@ const config: Configuration = {
         exclude: /node_modules/,
       },
       {
-<<<<<<< HEAD
-<<<<<<< HEAD
         test: /\.(png|jpg|gif)$/,
-=======
-        test: /\.(png|jpg|gif|svg)$/,
->>>>>>> 4d05bb8... feat: implement test version of the boilderplate
-=======
-        test: /\.(png|jpg|gif)$/,
->>>>>>> 34275eb... Fix svg loader, turn off no-duplicate-imports
         use: [
           {
             loader: 'url-loader',
@@ -88,10 +80,6 @@ const config: Configuration = {
       },
       formStylesRule(false),
       formStylesRule(true),
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 34275eb... Fix svg loader, turn off no-duplicate-imports
       {
         test: /\.svg$/,
         loader: 'react-svg-loader',
@@ -102,11 +90,6 @@ const config: Configuration = {
           },
         },
       },
-<<<<<<< HEAD
-=======
->>>>>>> 4d05bb8... feat: implement test version of the boilderplate
-=======
->>>>>>> 34275eb... Fix svg loader, turn off no-duplicate-imports
     ],
   },
   resolve: {
@@ -121,6 +104,7 @@ const config: Configuration = {
   },
   plugins: [
     new HtmlWebpackPlugin({
+      favicon: './src/static/icons/favicon.ico',
       template: './index.html',
     }),
     new MiniCssExtractPlugin({
@@ -129,9 +113,7 @@ const config: Configuration = {
     }),
     isAnalyze ? new BundleAnalyzerPlugin() : nothing,
     isProduction
-      ? new CopyWebpackPlugin({
-        patterns: [{ from: './src/static', to: '.' }],
-      })
+      ? new CopyWebpackPlugin({ patterns: [{ from: './src/static', to: '.' }] })
       : nothing,
   ],
 };

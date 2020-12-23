@@ -1,28 +1,16 @@
 {
   "name": "webpack-boilerplate",
   "version": "0.1.0",
-<<<<<<< HEAD
   "description": "covid-dashboard",
-=======
-  "description": "Webpack react+typescript boilerplate",
->>>>>>> 4d05bb8... feat: implement test version of the boilderplate
   "main": "src/index.tsx",
   "author": "Alexey-Koren",
   "license": "ISC",
   "bugs": {
-<<<<<<< HEAD
     "url": "https://github.com/SkaymanT/covid-dashboard/issues"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/SkaymanT/covid-dashboard.git"
-=======
-    "url": "https://github.com/Alexey-Koren/webpack-boilerplate/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Alexey-Koren/webpack-boilerplate.git"
->>>>>>> 4d05bb8... feat: implement test version of the boilderplate
   },
   "scripts": {
     "dev": "webpack-dev-server --open --hot -d",
@@ -36,22 +24,13 @@
     "lint:fix-staged": "eslint --fix",
     "fix": "run-s prettier:format lint:fix",
     "fix-staged": "lint-staged",
-<<<<<<< HEAD
-    "svgo": "svgo --pretty --indent=2 --disable=removeViewBox,mergePaths --enable=inlineStyles  --config svgo-config.json $FILE",
-    "svgo-all": "svgo -r -f src --pretty --indent=2 --disable=removeViewBox,mergePaths --enable=inlineStyles  --config svgo-config.json $FILE"
-=======
     "svgo": "cross-env svgo --pretty --indent=2 --disable=removeViewBox,mergePaths --enable=inlineStyles  --config svgo-config.json $FILE",
     "svgo-all": "cross-env svgo -r -f src --pretty --indent=2 --disable=removeViewBox,mergePaths --enable=inlineStyles  --config svgo-config.json"
->>>>>>> fada592... Fix svgo script to work on Windows
   },
   "dependencies": {
     "@babel/core": "^7.11.6",
     "@babel/preset-env": "^7.11.5",
     "@babel/preset-react": "^7.10.4",
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> e81a4cb... feat: implemented a test chart
     "@types/chart.js": "^2.9.29",
     "@types/classnames": "^2.2.10",
     "@types/copy-webpack-plugin": "^6.0.0",
@@ -61,39 +40,18 @@
     "@types/node": "^14.11.2",
     "@types/react": "^16.9.49",
     "@types/react-chartjs-2": "^2.5.7",
-<<<<<<< HEAD
-=======
-    "@types/classnames": "^2.2.10",
-    "@types/copy-webpack-plugin": "^6.0.0",
-    "@types/html-webpack-plugin": "^3.2.3",
-    "@types/mini-css-extract-plugin": "^0.9.1",
-    "@types/node": "^14.11.2",
-    "@types/react": "^16.9.49",
->>>>>>> 4d05bb8... feat: implement test version of the boilderplate
-=======
->>>>>>> e81a4cb... feat: implemented a test chart
     "@types/react-dom": "^16.9.8",
     "@types/react-router-dom": "^5.1.5",
+    "@types/react-table": "^7.0.26",
     "@types/webpack": "^4.41.22",
     "@types/webpack-bundle-analyzer": "^3.8.0",
     "@types/webpack-dev-server": "^3.11.0",
     "@typescript-eslint/eslint-plugin": "^4.2.0",
     "@typescript-eslint/parser": "^4.2.0",
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> e81a4cb... feat: implemented a test chart
     "axios": "^0.21.0",
     "babel-loader": "^8.1.0",
     "babel-plugin-module-resolver": "^4.0.0",
     "chartjs-react": "^3.1.5",
-<<<<<<< HEAD
-=======
-    "babel-loader": "^8.1.0",
-    "babel-plugin-module-resolver": "^4.0.0",
->>>>>>> 4d05bb8... feat: implement test version of the boilderplate
-=======
->>>>>>> e81a4cb... feat: implemented a test chart
     "classnames": "^2.2.6",
     "copy-webpack-plugin": "^6.1.1",
     "cross-env": "^7.0.2",
@@ -113,32 +71,18 @@
     "html-webpack-plugin": "^4.5.0",
     "husky": "^4.3.0",
     "lint-staged": "^10.4.0",
-<<<<<<< HEAD
     "mapbox-gl": "^2.0.0",
-=======
->>>>>>> 4d05bb8... feat: implement test version of the boilderplate
     "mini-css-extract-plugin": "^0.11.2",
     "node-sass": "^4.14.1",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.1.2",
     "react": "^16.13.1",
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> e81a4cb... feat: implemented a test chart
     "react-chartjs-2": "^2.11.1",
     "react-cookie": "^4.0.3",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
     "react-svg-loader": "^3.0.3",
-<<<<<<< HEAD
-=======
-    "react-cookie": "^4.0.3",
-    "react-dom": "^16.13.1",
-    "react-router-dom": "^5.2.0",
->>>>>>> 4d05bb8... feat: implement test version of the boilderplate
-=======
->>>>>>> 34275eb... Fix svg loader, turn off no-duplicate-imports
+    "react-table": "^7.6.2",
     "sass-loader": "^10.0.2",
     "style-loader": "^1.2.1",
     "svgo": "^1.3.2",
@@ -152,8 +96,6 @@
     "webpack-bundle-analyzer": "^3.9.0",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0"
-<<<<<<< HEAD
-<<<<<<< HEAD
   },
   "devDependencies": {
     "@babel/plugin-proposal-class-properties": "^7.12.1",
@@ -161,16 +103,5 @@
     "@babel/preset-stage-1": "^7.8.3",
     "axios": "^0.21.0",
     "chart.js": "^2.9.4"
-=======
->>>>>>> 4d05bb8... feat: implement test version of the boilderplate
-=======
-  },
-  "devDependencies": {
-    "@babel/plugin-proposal-class-properties": "^7.12.1",
-    "@babel/plugin-transform-async-to-generator": "^7.12.1",
-    "@babel/preset-stage-1": "^7.8.3",
-    "axios": "^0.21.0",
-    "chart.js": "^2.9.4"
->>>>>>> 5447874... feat: setup 'chart.js' lib
   }
 }
