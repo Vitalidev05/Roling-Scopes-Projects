@@ -1,4 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 $height: 900px;
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
 
 .covid {
   display: flex;
@@ -12,7 +18,7 @@ $height: 900px;
 
 .list-container {
   width: 100%;
-  flex: 0 0 5vw;
+  flex: 0 0 15vw;
   @media (max-width: $height) {
     height: 300px;
   }

@@ -1,7 +1,7 @@
 .footer {
   flex: 0 0 auto;
   display: flex;
-  background: linear-gradient(40deg, #818181, #777777);
+  background: radial-gradient(100% 215.42% at 0% 0%, #7c7c7c 0%, #363536 100%), #211f20;
   justify-content: space-around;
   align-items: center;
   min-height: 50px;
@@ -11,12 +11,24 @@
   }
 }
 
-.footer-li-icon {
-  width: 30px;
-  height: 30px;
+.link-footer {
+  display: flex;
+  text-decoration: none;
+  align-items: center;
   color: #000000;
+  font-weight: 700;
+
+  span {
+    display: block;
+    margin-left: 10px;
+  }
 
   &:hover {
     color: rgb(255, 255, 255);
   }
+}
+
+.footer-li-icon {
+  width: 30px;
+  height: 30px;
 }

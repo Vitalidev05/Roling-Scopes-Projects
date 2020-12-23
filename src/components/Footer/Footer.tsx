@@ -7,14 +7,17 @@ import GithubIcon from '../icons/GithubIcon';
 const Footer: React.FC = () => (
   <div className={styles.footer}>
     <div className="footer-text">2020</div>
-    <a href="https://github.com/KantyshVitali">
+    <a className={styles['link-footer']} href="https://github.com/KantyshVitali">
       <GithubIcon className={styles['footer-li-icon']} />
+      <span>KantyshVitali</span>
     </a>
-    <a href="https://github.com/SkaymanT">
+    <a className={styles['link-footer']} href="https://github.com/SkaymanT">
       <GithubIcon className={styles['footer-li-icon']} />
+      <span>SkaymanT</span>
     </a>
-    <a href="https://github.com/Ilya-Baklanov">
+    <a className={styles['link-footer']} href="https://github.com/Ilya-Baklanov">
       <GithubIcon className={styles['footer-li-icon']} />
+      <span>Ilya-Baklanov</span>
     </a>
 
     <a className="school-link" href="https://rs.school/js/">

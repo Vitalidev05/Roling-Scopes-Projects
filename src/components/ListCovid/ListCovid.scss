@@ -2,8 +2,9 @@
   display: block;
   position: relative;
   width: 100%;
-  height: 100%;
-  background-color: #525252;
+  height: calc(100% - 40px);
+  background: radial-gradient(100% 215.42% at 0% 0%, #7c7c7c 0%, #636363 100%), #211f20;
+  padding: 20px 0;
 }
 
 .list-span {
