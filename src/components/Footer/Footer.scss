@@ -21,6 +21,10 @@
   span {
     display: block;
     margin-left: 10px;
+
+    @media (max-width: 500px) {
+      display: none;
+    }
   }
 
   &:hover {

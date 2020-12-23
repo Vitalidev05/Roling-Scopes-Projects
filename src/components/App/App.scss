@@ -19,9 +19,6 @@ body {
 .list-container {
   width: 100%;
   flex: 0 0 5vw;
-  @media (max-width: $height) {
-    height: 300px;
-  }
 }
 
 .map-container {
@@ -39,9 +36,4 @@ body {
   flex-direction: column;
   justify-content: space-around;
   align-items: stretch;
-
-  @media (max-width: $height) {
-    flex-direction: row;
-    height: 450px;
-  }
 }
