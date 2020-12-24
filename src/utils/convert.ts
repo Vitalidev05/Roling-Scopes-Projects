@@ -19,6 +19,7 @@ import {
 			country: point.country,
 			cases: point.todayCases,
 			deaths: point.todayDeaths,
+			recovered: point.todayRecovered,
 			iso: point.countryInfo.iso2,
 		 },
 	  }));
@@ -36,6 +37,7 @@ import {
 			country: point.country,
 			cases: +(point.casesPerOneMillion / 10).toFixed(0),
 			deaths: +(point.deathsPerOneMillion / 10).toFixed(0),
+			recovered: +(point.recoveredPerOneMillion / 10).toFixed(0),
 			iso: point.countryInfo.iso2,
 		 },
 	  }));
@@ -52,6 +54,7 @@ import {
 		 country: point.country,
 		 cases: point.cases,
 		 deaths: point.deaths,
+		 recovered: point.recovered,
 		 iso: point.countryInfo.iso2,
 	  },
 	}));

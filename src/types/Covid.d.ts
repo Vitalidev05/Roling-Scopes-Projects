@@ -64,5 +64,6 @@ export interface GeoJsonProperties {
   country: string;
   cases: number;
   deaths: number;
+  recovered: number;
   iso: string;
 }
