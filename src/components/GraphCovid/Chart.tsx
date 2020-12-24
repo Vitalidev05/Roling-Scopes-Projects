@@ -4,10 +4,12 @@ import React, { useState, useEffect } from 'react';
 import { Pie, Line } from 'react-chartjs-2';
 
 import styles from '@/components/GraphCovid/GraphCovid.scss';
+import { useStateApp } from '@/context/appContext';
 
 const Chart = (): JSX.Element => {
   const [chartData, setChartData] = useState({});
   const [typeOfChart, setTypeOfChart] = useState({});
+  const cnt = useStateApp();
 
   function transformDate(date: string): string {
     const options = {
@@ -107,6 +109,10 @@ const Chart = (): JSX.Element => {
     createNewStateTotalCases();
   }, []);
 
+  useEffect(() => {
+    createNewStateForCountry(cnt.stateApp.country, cnt.stateApp.casses);
+  }, [cnt]);
+
   function Pies() {
     return (
       <Pie
@@ -151,7 +157,7 @@ const Chart = (): JSX.Element => {
           <button
             className={styles['nav-bar__button']}
             type="button"
-            onClick={() => createNewStateForCountry('ukraine', 'confirmed')}
+            onClick={() => createNewStateForCountry(cnt.stateApp.country, cnt.stateApp.casses)}
           >
             For Country...
           </button>
