@@ -5,6 +5,7 @@ import { Pie, Line } from 'react-chartjs-2';
 
 import styles from '@/components/GraphCovid/GraphCovid.scss';
 import { useStateApp } from '@/context/appContext';
+import { ICovid } from '@/types/Covid';
 
 const Chart = (): JSX.Element => {
   const [chartData, setChartData] = useState({});
@@ -105,6 +106,50 @@ const Chart = (): JSX.Element => {
       .catch((error: Error) => setChartData({ error }));
   }
 
+  function createNewStateForRate(country: string, cases: string) {
+    const urlCurrent = `https://disease.sh/v3/covid-19/countries/${country}`;
+    const urlForecast = `https://api.covid19api.com/country/${country}/status/${cases}`;
+    const requests = [fetch(urlCurrent), fetch(urlForecast)];
+
+    let selectCountry: ICovid = {} as ICovid;
+    let newCases = [] as number[];
+    let newDate = [] as string[];
+    Promise.all(requests)
+      .then(values => Promise.all(values.map(r => r.json())))
+      .then((res: [ICovid, Record<string, number>[], Record<string, string>[]]) => {
+        res.forEach((item, index) => {
+          if (index === 0) {
+            selectCountry = item as ICovid;
+          } else if (index === 1) {
+            newCases = (item as Record<string, number>[]).map(
+              (el: Record<string, number>) => el['Cases']
+            );
+            newCases = newCases.map(el => el / (selectCountry.population / 100000));
+            newDate = (item as Record<string, string>[]).map((el: Record<string, string>) => transformDate(el['Date']));
+          }
+          setChartData({
+            labels: newDate,
+            datasets: [
+              {
+                label: `Cases for ${country.toUpperCase()}: per 100k`,
+                data: newCases,
+                backgroundColor: [
+                  ['rgba(150, 90, 192, 0.6)'],
+                  ['rgba(200, 192, 192, 0.6)'],
+                  ['rgba(230, 70, 192, 0.6)'],
+                ],
+                borderWidth: 4,
+              },
+            ],
+          });
+          setTypeOfChart({
+            typeChart: 'line',
+          });
+        });
+      })
+      .catch((error: Error) => setChartData({ error }));
+  }
+
   useEffect(() => {
     createNewStateTotalCases();
   }, []);
@@ -153,6 +198,13 @@ const Chart = (): JSX.Element => {
             onClick={() => createNewStateNewCases()}
           >
             Daily Cases
+          </button>
+          <button
+            className={styles['nav-bar__button']}
+            type="button"
+            onClick={() => createNewStateForRate(cnt.stateApp.country, cnt.stateApp.casses)}
+          >
+            Incidence Rate
           </button>
           <button
             className={styles['nav-bar__button']}
