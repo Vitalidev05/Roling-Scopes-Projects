@@ -10,6 +10,7 @@ import { ICovid } from '@/types/Covid';
 const Chart = (): JSX.Element => {
   const [chartData, setChartData] = useState({});
   const [typeOfChart, setTypeOfChart] = useState({});
+  const [stateActiveGraph, setStateActiveGraph] = useState(0);
   const cnt = useStateApp();
 
   function transformDate(date: string): string {
@@ -23,6 +24,7 @@ const Chart = (): JSX.Element => {
   }
 
   function createNewStateTotalCases() {
+    setStateActiveGraph(0);
     fetch('https://api.covid19api.com/summary')
       .then((response: Response) => response.json())
       .then(res => {
@@ -51,6 +53,7 @@ const Chart = (): JSX.Element => {
   }
 
   function createNewStateNewCases() {
+    setStateActiveGraph(1);
     fetch('https://api.covid19api.com/summary')
       .then((response: Response) => response.json())
       .then(res => {
@@ -79,6 +82,7 @@ const Chart = (): JSX.Element => {
   }
 
   function createNewStateForCountry(country: string, cases: string) {
+    setStateActiveGraph(3);
     fetch(`https://api.covid19api.com/country/${country}/status/${cases}`)
       .then((response: Response) => response.json())
       .then((res: []) => {
@@ -88,7 +92,9 @@ const Chart = (): JSX.Element => {
           labels: newDate,
           datasets: [
             {
-              label: `Cases for ${country.toUpperCase()}: ${cases}`,
+              label: `${
+                cases[0].toUpperCase() + cases.slice(1)
+              } cases for ${country.toUpperCase()}:`,
               data: newCases,
               backgroundColor: [
                 ['rgba(150, 90, 192, 0.6)'],
@@ -107,6 +113,7 @@ const Chart = (): JSX.Element => {
   }
 
   function createNewStateForRate(country: string, cases: string) {
+    setStateActiveGraph(2);
     const urlCurrent = `https://disease.sh/v3/covid-19/countries/${country}`;
     const urlForecast = `https://api.covid19api.com/country/${country}/status/${cases}`;
     const requests = [fetch(urlCurrent), fetch(urlForecast)];
@@ -131,7 +138,9 @@ const Chart = (): JSX.Element => {
             labels: newDate,
             datasets: [
               {
-                label: `Cases for ${country.toUpperCase()}: per 100k`,
+                label: `${
+                  cases[0].toUpperCase() + cases.slice(1)
+                } cases for ${country.toUpperCase()}: per 100k`,
                 data: newCases,
                 backgroundColor: [
                   ['rgba(150, 90, 192, 0.6)'],
@@ -151,11 +160,13 @@ const Chart = (): JSX.Element => {
   }
 
   useEffect(() => {
-    createNewStateTotalCases();
-  }, []);
-
-  useEffect(() => {
-    createNewStateForCountry(cnt.stateApp.country, cnt.stateApp.casses);
+    if (stateActiveGraph === 2) {
+      createNewStateForRate(cnt.stateApp.country, cnt.stateApp.casses);
+    } else if (stateActiveGraph === 3) {
+      createNewStateForCountry(cnt.stateApp.country, cnt.stateApp.casses);
+    } else {
+      createNewStateTotalCases();
+    }
   }, [cnt]);
 
   function Pies() {
