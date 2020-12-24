@@ -4,6 +4,8 @@ const mapBoxToken = 'pk.eyJ1Ijoic2theW1hbnQiLCJhIjoiY2tiMGc2dGJhMDdzajJ4bWVtcnFr
 
 const coronaUrl = 'https://corona.lmao.ninja/v3/covid-19/countries';
 
+const categoriesTable: string[] = ['confirmed', 'deaths', 'recovered'];
+
 const categories: ICategory[] = [
   { name: 'Cumulative Cases', id: 'AllCases', checked: true },
   { name: 'Today Cases', id: 'TodayCases', checked: false },
@@ -158,5 +160,5 @@ const layers: mapboxgl.AnyLayer[] = [
 ];
 
 export {
-  mapBoxToken, coronaUrl, layers, categories,
+  mapBoxToken, coronaUrl, layers, categories, categoriesTable,
 };

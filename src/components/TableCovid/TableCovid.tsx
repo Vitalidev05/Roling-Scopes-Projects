@@ -3,9 +3,10 @@ import { Column } from 'react-table';
 
 import Table from '@/components/TableCovid/Table/Table';
 import styles from '@/components/TableCovid/TableCovid.scss';
+import ComponentLayout from '@/components/layout';
+import { categoriesTable } from '@/constants';
+import { useStateApp } from '@/context/appContext';
 import { useCovidMapService } from '@/services';
-
-import ComponentLayout from '../layout';
 
 interface TestData {
   country: string;
@@ -196,6 +197,20 @@ const TableCovid = (): JSX.Element => {
 
   const dataBefore = useCovidMapService();
 
+  const context = useStateApp();
+  const handlerClickCasses = (state: number) => {
+    setStateTest(state);
+    if (state === 0) {
+      context.updateCasses(categoriesTable[0]);
+    }
+    if (state === 1) {
+      context.updateCasses(categoriesTable[1]);
+    }
+    if (state === 2) {
+      context.updateCasses(categoriesTable[2]);
+    }
+  };
+
   useEffect(() => {
     if (dataBefore.status === 'loaded') {
       let obj: TestData[] = [];
@@ -212,7 +227,7 @@ const TableCovid = (): JSX.Element => {
         obj.push(...newobj);
       }
 
-      if (stateTest === 0) {
+      if (context.stateApp.casses === categoriesTable[0]) {
         setStateHeader(tableColumns);
         obj = [];
         for (let i = 0; i < dataBefore.data.length; i += 1) {
@@ -228,7 +243,7 @@ const TableCovid = (): JSX.Element => {
           obj.push(...newobj);
         }
       }
-      if (stateTest === 1) {
+      if (context.stateApp.casses === categoriesTable[1]) {
         setStateHeader(tableColumns1);
         obj = [];
         for (let i = 0; i < dataBefore.data.length; i += 1) {
@@ -244,7 +259,7 @@ const TableCovid = (): JSX.Element => {
           obj.push(...newobj);
         }
       }
-      if (stateTest === 2) {
+      if (context.stateApp.casses === categoriesTable[2]) {
         setStateHeader(tableColumns2);
         obj = [];
         for (let i = 0; i < dataBefore.data.length; i += 1) {
@@ -262,19 +277,31 @@ const TableCovid = (): JSX.Element => {
       }
       setStateList(obj);
     }
-  }, [dataBefore, stateTest]);
+  }, [dataBefore, stateTest, context]);
 
   return (
     <ComponentLayout>
       <div className={styles['table-covid']}>
         <div className={styles['button-container']}>
-          <button type="button" className={styles['list-button']} onClick={() => setStateTest(1)}>
+          <button
+            type="button"
+            className={styles['list-button']}
+            onClick={() => handlerClickCasses(1)}
+          >
             Death
           </button>
-          <button type="button" className={styles['list-button']} onClick={() => setStateTest(0)}>
+          <button
+            type="button"
+            className={styles['list-button']}
+            onClick={() => handlerClickCasses(0)}
+          >
             Cases
           </button>
-          <button type="button" className={styles['list-button']} onClick={() => setStateTest(2)}>
+          <button
+            type="button"
+            className={styles['list-button']}
+            onClick={() => handlerClickCasses(2)}
+          >
             Recovered
           </button>
         </div>
