@@ -10,7 +10,7 @@ import { ICovid } from '@/types/Covid';
 const Chart = (): JSX.Element => {
   const [chartData, setChartData] = useState({});
   const [typeOfChart, setTypeOfChart] = useState({});
-  const [stateActiveGraph, setStateActiveGraph] = useState(0);
+  const [stateActiveGraph, setStateActiveGraph] = useState(3);
   const cnt = useStateApp();
 
   function transformDate(date: string): string {
