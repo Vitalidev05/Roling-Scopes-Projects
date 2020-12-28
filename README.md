@@ -1,7 +1,1 @@
-<<<<<<< HEAD
-# [covid-dashboard](https://group7-covid-dashboard.netlify.app)
-
-
-=======
-# webpack-boilerplate
->>>>>>> ba322eb... Create README.md
+# [covid-dashboard](https://skaymant-ilya-baklanov-kantyshvitali-covid-dashboard.netlify.app/)
