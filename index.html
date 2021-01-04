@@ -1,0 +1,125 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>TypeScript</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css" id="theme">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-background="./assets/typescript.png">
+					<h1>typescript</h1>
+					<h3>Typed JavaScript at Any Scale</h3>
+					<span style="color: #93a1a1; font-size: 22px;" >Author <a href="https://github.com/KantyshVitali">Kantysh Vitali</a></span>
+					<br>
+					<br>
+					<br>
+					<br>
+				</section>
+
+				<section id="fragments" data-background="#3178c6">
+					<h2>INTRODUCTION</h2>
+					<ul>
+						In this presentation I want to talk about:						
+						<li class="fragment">what is typescript</li>
+						<li class="fragment">history of typescript</li>
+						<li class="fragment">main features of the typescript</li>
+						<li class="fragment">advantages over js</li>
+						<li class="fragment">conclusion</li>						
+					</ul>
+				</section>
+				<section data-background="#4e086f">					
+						<section >
+							<h2>What is TypeScript?</h2>
+							<p class="fragment" style="color: #bdc2c1"><strong style="color: #fff">TypeScript</strong> is an open-source language which builds on <strong style="color: #fff">JavaScript</strong>, one of the world’s most used tools, by adding <strong style="color: #fff">static type</strong> definitions.</p>
+							<p class="fragment" style="color: #bdc2c1">Types provide a way to describe the shape of an object, providing better documentation, and allowing TypeScript to <strong style="color: #fff">validate that your code</strong> is working correctly.</p>
+							<p class="fragment" style="color: #bdc2c1">
+								Writing types can be optional in TypeScript, because type inference allows you to get a lot of power without writing additional code.	</p>
+						</section>		
+						<section>							
+								<p style="color: #bdc2c1"><strong style="color: #fff">Typescript</strong> does not stand still and is growing very fast this is evidenced by the rating of <strong style="color: #fff">GitHub</strong></p>
+							<img src="./assets/type.png" alt="type" class="fragment">
+						</section>			
+				</section>
+				<section data-background="#6495ED">
+					<section>
+						<h2>History of TypeScript</h2>
+						<p>TypeScript is a relatively new language. It was launched for public use in October 2012, as the version 0.8 of the language. It was a result of two years of developed at Microsoft, with Anders Hejlsberg, the lead architect of c#, as well as the creator of Delphi and Turbo Pascal working on the project too.</p>
+					</section>
+					<section data-background="#000">
+						<img src="./assets/timeline.png" alt="">
+					</section>
+					
+				</section>
+				<section data-background="#00273f">
+					<section>
+						<h2>Main features of TypeScript</h2>
+						<p style="color: #bdc2c1" class="fragment"><strong style="color: #fff">TypeScript is just JavaScript.</strong> TypeScript starts with JavaScript and ends with JavaScript. Typescript adopts the basic building blocks of your program from JavaScript. Hence, you only need to know JavaScript to use TypeScript. All TypeScript code is converted into its JavaScript equivalent for the purpose of execution.</p>
+						<p style="color: #bdc2c1" class="fragment"><strong style="color: #fff">TypeScript supports other JS libraries.</strong> Compiled TypeScript can be consumed from any JavaScript code. TypeScript-generated JavaScript can reuse all of the existing JavaScript frameworks, tools, and libraries.</p>
+					</section>
+					<section>
+						<p style="color: #bdc2c1" ><strong style="color: #fff">JavaScript is TypeScript.</strong>This means that any valid <strong style="color: #fff">.js</strong> file can be renamed to <strong style="color: #fff">.ts </strong>and compiled with other TypeScript files.</p>						
+						<p style="color: #bdc2c1" class="fragment"><strong style="color: #fff">TypeScript is portable.</strong> TypeScript is portable across browsers, devices, and operating systems. It can run on any environment that JavaScript runs on. Unlike its counterparts, TypeScript doesn’t need a dedicated VM or a specific runtime environment to execute.</p>
+											
+					</section>
+					<section>
+						<p style="color: #bdc2c1" ><strong style="color: #fff">Strong Static Typing.</strong> JavaScript is not strongly typed. TypeScript comes with an optional static typing and type inference system through the TLS (TypeScript Language Service). The type of a variable, declared with no type, may be inferred by the TLS based on its value.</p>	
+					</section>
+				</section>
+				<section data-background="yellow">
+					<section>
+						<h2>advantages over js</h2>
+						<p class="fragment">First of all it is static typing. Static typing allows to avoid a lot of errors associated with dynamic typing of javascript</p>
+						<p class="fragment">Second one is typescipt allows to avoid errors in JavaScript associated with implicit casting like that:</p>
+
+					</section>		
+					<section>							
+						<p>So we can see that</p>
+						<img src="./assets/Screenshot_17.jpg" alt="">
+						<p class="fragment">Logically, we can assume if 0 == [] returns true and 0 == "0" returns true, that "0" == [] also returns true</p>
+						<p class="fragment">But ...</p>
+						<img class="fragment" src="./assets/Screenshot_18.jpg" alt="">
+					</section>	
+					<section>
+						<h2>One of the biggest disadvantage of JavaScript</h2>
+						<p class="fragment">One of the biggest disadvantage of JavaScript is this is his unpredictability</p>
+					</section>		
+					
+				</section>
+				<section data-background="#262626">
+					<h2>Conclusion</h2>
+					<p>In conclusion I would like to say that TypeScript is very good technology with good potential, it will not replace JavaScript soon, but Big companies begin to actively use it now</p>
+				</section>
+				<section>
+					<h2>The End</h2>
+					<img src="./assets/directed.gif" alt="">
+				</section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
